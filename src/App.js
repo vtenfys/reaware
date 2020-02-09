@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 
 import Home from "./routes/Home";
@@ -26,11 +26,11 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/review">
-            <div>test</div>
-          </Route>
           <Route>
-            <Redirect to="/" />
+            <p>route not implemented</p>
+            <p>
+              <Link to="/">go back</Link>
+            </p>
           </Route>
         </Switch>
       </div>
