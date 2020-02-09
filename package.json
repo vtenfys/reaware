@@ -1,0 +1,28 @@
+{
+  "name": "nw-react-app",
+  "version": "0.1.0",
+  "main": "public/index.html",
+  "author": "David Bailey <davidbailey00@outlook.com>",
+  "scripts": {
+    "start": "nw",
+    "build": "NODE_ENV=production webpack",
+    "watch": "NODE_ENV=development webpack -w"
+  },
+  "window": {
+    "toolbar": false
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-modules": "^0.1.2",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "nw": "^0.44.0-sdk",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
