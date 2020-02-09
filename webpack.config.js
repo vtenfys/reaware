@@ -8,15 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, "public"),
     filename: "App.js",
   },
-  externals: [
-    nodeExternals({
-      whitelist: [
-        "react-dom", // for react-devtools support
-        "react-jss", // for proper style injection
-      ],
-    }),
-    { "nw.gui": "nw" },
-  ],
+  externals: [nodeExternals(), { "nw.gui": "nw" }],
   module: {
     rules: [
       {

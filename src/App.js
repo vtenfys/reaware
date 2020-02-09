@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import TitleCard from "./components/sections/TitleCard";
+import Home from "./routes/Home";
 
 function App() {
   return (
-    <TitleCard
-      title="Good evening, David."
-      subtitle="You have 5 cards to review today."
-    />
+    <HashRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/review">
+          <div>test</div>
+        </Route>
+        <Route>
+          <Redirect to="/" />
+        </Route>
+      </Switch>
+    </HashRouter>
   );
 }
 

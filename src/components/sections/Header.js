@@ -20,7 +20,7 @@ const useStyles = createUseStyles({
   },
 });
 
-function TitleCard({ title, subtitle }) {
+function Header({ title, subtitle }) {
   const classes = useStyles();
 
   return (
@@ -33,9 +33,9 @@ function TitleCard({ title, subtitle }) {
   );
 }
 
-TitleCard.propTypes = {
+Header.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
 };
 
-export default TitleCard;
+export default Header;
