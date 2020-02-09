@@ -6,16 +6,16 @@ module.exports = {
   entry: "./src/App.js",
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "App.js"
+    filename: "App.js",
   },
-  externals: [nodeExternals()],
+  externals: [nodeExternals(), { "nw.gui": "nw" }],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: "babel-loader"
-      }
-    ]
-  }
+        use: "babel-loader",
+      },
+    ],
+  },
 };
