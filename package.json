@@ -26,6 +26,7 @@
     "min_height": 480
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "color": "^3.1.2",
     "nw": "^0.44.0",
     "prop-types": "^15.7.2",

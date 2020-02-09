@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { createUseStyles } from "react-jss";
+import cx from "classnames";
 
 const useStyles = createUseStyles({
   container: {
@@ -12,13 +14,14 @@ const useStyles = createUseStyles({
   },
 });
 
-function Container({ children }) {
+function Container({ children, className }) {
   const classes = useStyles();
-  return <div className={classes.container}>{children}</div>;
+  return <div className={cx(classes.container, className)}>{children}</div>;
 }
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 export default Container;

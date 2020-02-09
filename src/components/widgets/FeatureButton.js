@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { createUseStyles } from "react-jss";
-import { rem, colors } from "../../lib/css";
-import color from "color";
+import { rem, colors, lighten, darken } from "../../lib/css";
 
 const useStyles = createUseStyles({
   link: {
@@ -13,19 +12,15 @@ const useStyles = createUseStyles({
     borderRadius: 4,
 
     textDecoration: "none",
-    backgroundColor: colors.primary,
+    backgroundColor: props => colors[props.type],
     color: colors.light,
 
     "&:hover, &:focus": {
-      backgroundColor: color(colors.primary)
-        .lighten(0.125)
-        .hex(),
+      backgroundColor: props => lighten(colors[props.type]),
     },
 
     "&:active": {
-      backgroundColor: color(colors.primary)
-        .darken(0.125)
-        .hex(),
+      backgroundColor: props => darken(colors[props.type]),
     },
   },
 
@@ -35,8 +30,8 @@ const useStyles = createUseStyles({
   },
 });
 
-function FeatureButton({ to, title, subtitle }) {
-  const classes = useStyles();
+function FeatureButton({ to, title, subtitle, type = "primary" }) {
+  const classes = useStyles({ type });
 
   return (
     <Link to={to} className={classes.link} aria-label={title}>
@@ -50,6 +45,7 @@ FeatureButton.propTypes = {
   to: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
 
 export default FeatureButton;

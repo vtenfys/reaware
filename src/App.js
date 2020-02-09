@@ -11,6 +11,8 @@ const useStyles = createUseStyles({
     backgroundColor: colors.light,
     color: colors.dark,
     height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
 });
 
