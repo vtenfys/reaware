@@ -1,4 +1,7 @@
 dependencies:
+  '@fortawesome/fontawesome-svg-core': 1.2.27
+  '@fortawesome/free-solid-svg-icons': 5.12.1
+  '@fortawesome/react-fontawesome': 0.1.8_42855a367911e00e120b31acc6c31c71
   classnames: 2.2.6
   color: 3.1.2
   nw: 0.44.0
@@ -894,6 +897,39 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Qv4LTqO11jepd5Qmlp3M1YEjBumoTHcHFdgPTQ+sFlIL5myi/7xu/POwP7IRu6odBdmLXdtIs1D6TuW6kbwbbg==
+  /@fortawesome/fontawesome-common-types/0.2.27:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-97GaByGaXDGMkzcJX7VmR/jRJd8h1mfhtA7RsxDBN61GnWE/PPCZhOdwG/8OZYktiRUF0CvFOr+VgRkJrt6TWg==
+  /@fortawesome/fontawesome-svg-core/1.2.27:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.27
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-sOD3DKynocnHYpuw2sLPnTunDj7rLk91LYhi2axUYwuGe9cPCw7Bsu9EWtVdNJP+IYgTCZIbyARKXuy5K/nv+Q==
+  /@fortawesome/free-solid-svg-icons/5.12.1:
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.27
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-k3MwRFFUhyL4cuCJSaHDA0YNYMELDXX0h8JKtWYxO5XD3Dn+maXOMrVAAiNGooUyM2v/wz/TOaM0jxYVKeXX7g==
+  /@fortawesome/react-fontawesome/0.1.8_42855a367911e00e120b31acc6c31c71:
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 1.2.27
+      prop-types: 15.7.2
+      react: 16.12.0
+    dev: false
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ^1.2.20
+      react: 16.x
+    resolution:
+      integrity: sha512-I5h9YQg/ePA3Br9ISS18fcwOYmzQYDSM1ftH03/8nHkiqIVHtUyQBw482+60dnzvlr82gHt3mGm+nDUp159FCw==
   /@samverschueren/stream-to-observable/0.3.0:
     dependencies:
       any-observable: 0.3.0
@@ -7176,6 +7212,9 @@ specifiers:
   '@babel/core': ^7.8.4
   '@babel/preset-env': ^7.8.4
   '@babel/preset-react': ^7.8.3
+  '@fortawesome/fontawesome-svg-core': ^1.2.27
+  '@fortawesome/free-solid-svg-icons': ^5.12.1
+  '@fortawesome/react-fontawesome': ^0.1.8
   babel-eslint: ^10.0.3
   babel-loader: ^8.0.6
   classnames: ^2.2.6

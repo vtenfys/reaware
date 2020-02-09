@@ -26,6 +26,9 @@
     "min_height": 480
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "nw": "^0.44.0",

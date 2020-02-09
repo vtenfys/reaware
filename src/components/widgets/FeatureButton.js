@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import { createUseStyles } from "react-jss";
 import { rem, colors, lighten, darken } from "../../lib/css";
 
@@ -28,6 +31,10 @@ const useStyles = createUseStyles({
     fontSize: rem(20),
     marginBottom: 8,
   },
+
+  icon: {
+    marginLeft: 12,
+  },
 });
 
 function FeatureButton({ to, title, subtitle, type = "primary" }) {
@@ -35,7 +42,10 @@ function FeatureButton({ to, title, subtitle, type = "primary" }) {
 
   return (
     <Link to={to} className={classes.link} aria-label={title}>
-      <h2 className={classes.title}>{title}</h2>
+      <h2 className={classes.title}>
+        {title}
+        <FontAwesomeIcon className={classes.icon} icon={faArrowRight} />
+      </h2>
       <p>{subtitle}</p>
     </Link>
   );
