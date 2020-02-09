@@ -32,7 +32,7 @@ function Home() {
           <FeatureButton
             to="/review"
             title="Review Today's Cards"
-            subtitle="Reviewing helps you positively restructure journaled thoughts"
+            subtitle="Reviewing helps you mentally restructure journaled thoughts"
           />
           <FeatureButton
             to="/new-thought"
