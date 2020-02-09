@@ -4,7 +4,7 @@
   "main": "public/index.html",
   "author": "David Bailey <davidbailey00@outlook.com>",
   "scripts": {
-    "install": "NWJS_BUILD_TYPE=sdk pnpm install",
+    "install-sdk": "NWJS_BUILD_TYPE=sdk pnpm install nw",
     "start": "nw --mixed-context",
     "build": "NODE_ENV=production webpack",
     "watch": "NODE_ENV=development webpack --watch",
