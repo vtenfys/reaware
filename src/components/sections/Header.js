@@ -2,19 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { createUseStyles } from "react-jss";
-import { rem, color } from "../../lib/css-helpers";
+import { rem, colors } from "../../lib/css";
 
 import Container from "../core/Container";
 
 const useStyles = createUseStyles({
   header: {
     padding: [64, 0, 32],
-    backgroundColor: color("dark"),
-    color: color("light"),
+    backgroundColor: colors.dark,
+    color: colors.light,
   },
+
   title: {
     marginBottom: 12,
   },
+
   subtitle: {
     fontSize: rem(18),
   },

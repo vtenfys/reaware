@@ -1,12 +1,11 @@
-:root {
-  --color-light: #eee;
-  --color-dark: #333;
+html,
+body,
+#app {
+  height: 100%;
 }
 
 body {
   margin: 0;
-  background-color: var(--color-light);
-  color: var(--color-dark);
 }
 
 * {
