@@ -6,6 +6,8 @@ import { createUseStyles } from "react-jss";
 import Home from "./routes/Home";
 import { colors } from "./lib/css";
 
+import "./App.css";
+
 const useStyles = createUseStyles({
   root: {
     backgroundColor: colors.light,
