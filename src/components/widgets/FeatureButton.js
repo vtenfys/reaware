@@ -20,6 +20,7 @@ const useStyles = createUseStyles({
 
     "&:hover, &:focus": {
       backgroundColor: props => lighten(colors[props.type]),
+      color: colors.white,
 
       "& h2": {
         textDecoration: "underline",
@@ -28,6 +29,7 @@ const useStyles = createUseStyles({
 
     "&:active": {
       backgroundColor: props => darken(colors[props.type]),
+      color: colors.light,
     },
   },
 
