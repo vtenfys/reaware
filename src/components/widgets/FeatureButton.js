@@ -33,7 +33,7 @@ const useStyles = createUseStyles({
 
   title: {
     fontSize: rem(20),
-    marginBottom: 8,
+    marginBottom: 12,
   },
 
   icon: {

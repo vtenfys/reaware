@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
   },
 
   title: {
-    marginBottom: 12,
+    marginBottom: 16,
   },
 
   subtitle: {
