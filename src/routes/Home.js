@@ -7,7 +7,7 @@ import Header from "../components/sections/Header";
 import FeatureButton from "../components/widgets/FeatureButton";
 
 const useStyles = createUseStyles({
-  section: {
+  main: {
     padding: [32, 0],
     overflow: "auto",
   },
@@ -29,7 +29,7 @@ function Home() {
         subtitle="You have N cards to review today."
         icon={faCloudMoon}
       />
-      <section className={classes.section}>
+      <main className={classes.main}>
         <Container className={classes.container}>
           <FeatureButton
             to="/review"
@@ -43,7 +43,7 @@ function Home() {
             type="secondary"
           />
         </Container>
-      </section>
+      </main>
     </>
   );
 }
