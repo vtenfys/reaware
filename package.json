@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "main": "public/index.html",
   "author": "David Bailey <davidbailey00@outlook.com>",
+  "window": {
+    "title": "ReAware",
+    "width": 640,
+    "height": 480,
+    "min_width": 640,
+    "min_height": 480
+  },
   "scripts": {
     "install-sdk": "NWJS_BUILD_TYPE=sdk pnpm install",
     "start": "nw --mixed-context",
@@ -18,12 +25,6 @@
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.{html,css,json}": "prettier --write"
-  },
-  "window": {
-    "width": 640,
-    "height": 480,
-    "min_width": 640,
-    "min_height": 480
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
