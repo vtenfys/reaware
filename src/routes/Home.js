@@ -1,5 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
+import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
 
 import Container from "../components/core/Container";
 import Header from "../components/sections/Header";
@@ -26,6 +27,7 @@ function Home() {
       <Header
         title="Good evening, Name."
         subtitle="You have N cards to review today."
+        icon={faCloudMoon}
       />
       <section className={classes.section}>
         <Container className={classes.container}>

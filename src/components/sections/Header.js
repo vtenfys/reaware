@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { createUseStyles } from "react-jss";
 import { rem, colors } from "../../lib/css";
@@ -20,15 +21,22 @@ const useStyles = createUseStyles({
   subtitle: {
     fontSize: rem(18),
   },
+
+  icon: {
+    float: "right",
+  },
 });
 
-function Header({ title, subtitle }) {
+function Header({ title, subtitle, icon }) {
   const classes = useStyles();
 
   return (
     <header className={classes.header}>
       <Container>
-        <h1 className={classes.title}>{title}</h1>
+        <h1 className={classes.title}>
+          {title}
+          <FontAwesomeIcon className={classes.icon} icon={icon} />
+        </h1>
         <p className={classes.subtitle}>{subtitle}</p>
       </Container>
     </header>
@@ -38,6 +46,7 @@ function Header({ title, subtitle }) {
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
 };
 
 export default Header;
