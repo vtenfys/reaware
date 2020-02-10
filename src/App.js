@@ -23,9 +23,7 @@ function App() {
     <HashRouter>
       <div className={styles.root}>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Route exact path="/" component={Home} />
           <Route>
             <p>route not implemented</p>
             <p>

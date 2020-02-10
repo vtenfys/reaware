@@ -34,6 +34,10 @@ const useStyles = createUseStyles({
   title: {
     fontSize: rem(20),
     marginBottom: 12,
+
+    "& svg": {
+      verticalAlign: "top",
+    },
   },
 
   icon: {
