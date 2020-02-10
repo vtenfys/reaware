@@ -13,8 +13,8 @@
   "scripts": {
     "install-sdk": "NWJS_BUILD_TYPE=sdk pnpm install",
     "start": "nw --mixed-context",
-    "build": "NODE_ENV=production rollup -c",
-    "watch": "NODE_ENV=development rollup -c -w",
+    "build": "NODE_ENV=production rollup --config",
+    "watch": "NODE_ENV=development rollup --config --watch",
     "devtools": "react-devtools"
   },
   "husky": {
