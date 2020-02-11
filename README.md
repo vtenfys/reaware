@@ -13,10 +13,10 @@ Before starting development, make sure you've already installed [Node.js](https:
 Run the following command in a terminal:
 
 ```sh
-pnpm run install-sdk
+NWJS_BUILD_TYPE=sdk pnpm install
 ```
 
-Using the `install-sdk` script ensures you install the SDK version of NW.js, allowing you to make use of developer tools.
+Remove `NWJS_BUILD_TYPE=sdk` to install the normal version of NW.js, which doesn't include DevTools.
 
 ### Building the app
 

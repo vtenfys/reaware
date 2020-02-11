@@ -11,7 +11,6 @@
     "min_height": 480
   },
   "scripts": {
-    "install-sdk": "NWJS_BUILD_TYPE=sdk pnpm install",
     "start": "nw --mixed-context",
     "dev": "react-devtools & pnpm start",
     "build": "NODE_ENV=production rollup --config",
