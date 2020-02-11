@@ -55,3 +55,7 @@ pnpm start
 ```
 
 This is the same as development mode, except React DevTools are not opened.
+
+## License
+
+Licensed under the Open Software License version 3.0
