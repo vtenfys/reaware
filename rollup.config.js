@@ -13,7 +13,7 @@ import pkg from "./package.json";
 
 const find = id => require.resolve(id, { paths: ["node_modules/.pnpm"] });
 const namedExports = {
-  [find("react")]: ["Component", "createContext"],
+  react: ["Component", "createContext"],
   [find("react-is")]: ["isValidElementType"],
 };
 
