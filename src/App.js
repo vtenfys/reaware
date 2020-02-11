@@ -6,6 +6,7 @@ import { createUseStyles } from "react-jss";
 import Home from "./routes/Home";
 import { colors } from "./lib/css";
 
+// Load global app styles
 import "./App.css";
 
 const useStyles = createUseStyles({

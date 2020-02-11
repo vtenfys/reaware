@@ -11,7 +11,9 @@ import fs from "fs";
 import ejs from "ejs";
 import pkg from "./package.json";
 
+// Rollup doesn't know how to find indirect dependencies when using PNPM
 const find = id => require.resolve(id, { paths: ["node_modules/.pnpm"] });
+
 const namedExports = {
   react: ["Component", "createContext"],
   [find("react-is")]: ["isValidElementType"],
