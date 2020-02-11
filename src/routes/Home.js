@@ -1,10 +1,12 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
 import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
+
+import { createUseStyles } from "react-jss";
+import { colors } from "../lib/css";
 
 import Container from "../components/core/Container";
 import Header from "../components/sections/Header";
-import FeatureButton from "../components/widgets/FeatureButton";
+import CardButton from "../components/widgets/CardButton";
 
 const useStyles = createUseStyles({
   main: {
@@ -31,16 +33,16 @@ function Home() {
       />
       <main className={classes.main}>
         <Container className={classes.container}>
-          <FeatureButton
+          <CardButton
             to="/review"
             title="Review Today's Cards"
             subtitle="Reviewing helps you mentally restructure journaled thoughts"
           />
-          <FeatureButton
+          <CardButton
             to="/new-thought"
             title="Journal New Thought"
             subtitle="Journaling helps you respond rationally to distorted thoughts"
-            type="secondary"
+            color={colors.secondary}
           />
         </Container>
       </main>

@@ -15,11 +15,11 @@ const useStyles = createUseStyles({
     borderRadius: 4,
 
     textDecoration: "none",
-    backgroundColor: props => colors[props.type],
+    backgroundColor: props => props.color,
     color: colors.light,
 
     "&:hover, &:focus": {
-      backgroundColor: props => lighten(colors[props.type]),
+      backgroundColor: props => lighten(props.color),
       color: colors.white,
 
       "& h2": {
@@ -28,14 +28,17 @@ const useStyles = createUseStyles({
     },
 
     "&:active": {
-      backgroundColor: props => darken(colors[props.type]),
+      backgroundColor: props => darken(props.color),
       color: colors.light,
     },
   },
 
   title: {
     fontSize: rem(20),
-    marginBottom: 12,
+  },
+
+  subtitle: {
+    marginTop: 12,
   },
 
   icon: {
@@ -43,8 +46,8 @@ const useStyles = createUseStyles({
   },
 });
 
-function FeatureButton({ to, title, subtitle, type = "primary" }) {
-  const classes = useStyles({ type });
+function CardButton({ to, title, subtitle, color = colors.primary }) {
+  const classes = useStyles({ color });
 
   return (
     <Link to={to} className={classes.link} aria-label={title}>
@@ -52,16 +55,16 @@ function FeatureButton({ to, title, subtitle, type = "primary" }) {
         {title}
         <FontAwesomeIcon className={classes.icon} icon={faArrowRight} />
       </h2>
-      <p>{subtitle}</p>
+      {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
     </Link>
   );
 }
 
-FeatureButton.propTypes = {
+CardButton.propTypes = {
   to: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  subtitle: PropTypes.string,
+  color: PropTypes.string,
 };
 
-export default FeatureButton;
+export default CardButton;
