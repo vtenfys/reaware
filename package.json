@@ -24,7 +24,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --fix",
-    "*.{html,css,json,ejs}": "prettier --write"
+    "*.{md,css,json,ejs}": "prettier --write"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
