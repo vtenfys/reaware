@@ -1,5 +1,7 @@
 # ReAware
 
+<img width="752" height="614" src="assets/screenshot.png" alt="ReAware app, with header: Good evening, David; and buttons: Review Today's Cards, Journal New Thought" />
+
 ReAware is an app designed to help improve your mental wellbeing, through a combination of [CBT-based techniques](https://en.wikipedia.org/wiki/Cognitive_behavioral_therapy) and [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition).
 
 ReAware is built with [React](https://reactjs.org/) and [NW.js](https://nwjs.io/).
