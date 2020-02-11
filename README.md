@@ -16,11 +16,11 @@ Run the following command in a terminal:
 NWJS_BUILD_TYPE=sdk pnpm install
 ```
 
-Remove `NWJS_BUILD_TYPE=sdk` to install the normal version of NW.js, which doesn't include DevTools.
+Remove `NWJS_BUILD_TYPE=sdk` to install the normal version of NW.js, which doesn't include Chrome DevTools.
 
 ### Building the app
 
-To build the app in development mode, run the following command:
+**To build the app in development mode**, run the following command:
 
 ```sh
 pnpm run watch
@@ -28,7 +28,7 @@ pnpm run watch
 
 Leave the process running to enable automatic rebuilds when any source files are modified.
 
-To build the app in production mode, run the following command:
+**To build the app in production mode**, run the following command:
 
 ```sh
 pnpm run build
@@ -38,7 +38,7 @@ This differs from the `watch` command in that NPM packages are included in the b
 
 ### Running the app
 
-To run the app in development mode, run the following command:
+**To run the app in development mode**, run the following command:
 
 ```sh
 pnpm run dev
@@ -48,7 +48,9 @@ This launches [React DevTools](https://www.npmjs.com/package/react-devtools) alo
 
 **Note:** Your app must be built in development mode for React DevTools to function.
 
-To run the app in production mode, run the following command:
+Sometimes, the app may start before React DevTools are ready. If this occurs, right-click in the app window and select "Reload app". After reloading, React DevTools will connect.
+
+**To run the app in production mode**, run the following command:
 
 ```sh
 pnpm start
