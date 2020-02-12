@@ -7,9 +7,10 @@ import externals from "rollup-plugin-node-externals";
 import css from "rollup-plugin-css-porter";
 import html from "@rollup/plugin-html";
 
+import pkg from "./package.json";
 import fs from "fs";
 import ejs from "ejs";
-import pkg from "./package.json";
+import { minify } from "html-minifier-terser";
 
 // Rollup doesn't know how to find indirect dependencies when using PNPM
 const find = id => require.resolve(id, { paths: ["node_modules/.pnpm"] });
@@ -17,6 +18,11 @@ const find = id => require.resolve(id, { paths: ["node_modules/.pnpm"] });
 const namedExports = {
   react: ["Component", "createContext"],
   [find("react-is")]: ["isValidElementType"],
+};
+
+const minifyOptions = {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
 };
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -42,7 +48,8 @@ export default {
       title: pkg.window.title,
       template(data) {
         const str = fs.readFileSync("src/index.ejs", "utf8");
-        return ejs.render(str, data);
+        const result = ejs.render(str, data);
+        return isProduction ? minify(result, minifyOptions) : result;
       },
     }),
   ],
