@@ -24,7 +24,7 @@ devDependencies:
   eslint-config-prettier: 6.10.0_eslint@6.8.0
   eslint-plugin-prettier: 3.1.2_eslint@6.8.0+prettier@1.19.1
   eslint-plugin-react: 7.18.3_eslint@6.8.0
-  husky: 4.2.1
+  husky: 4.2.2
   lint-staged: 10.0.7
   nw: 0.44.1
   prettier: 1.19.1
@@ -1018,21 +1018,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
-  /@types/node/10.17.14:
+  /@types/node/10.17.15:
     dev: true
     resolution:
-      integrity: sha512-G0UmX5uKEmW+ZAhmZ6PLTQ5eu/VPaT+d/tdLd5IFsKRPcbe6lPxocBtcYBFSaLaCW8O60AX90e91Nsp8lVHCNw==
-  /@types/node/13.7.0:
+      integrity: sha512-daFGV9GSs6USfPgxceDA8nlSe48XrVCJfDeYm7eokxq/ye7iuOH87hKXgMtEAVLFapkczbZsx868PMDT1Y0a6A==
+  /@types/node/13.7.1:
     dev: true
     resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-Zq8gcQGmn4txQEJeiXo/KiLpon8TzAl0kmKH4zdWctPj05nWwp1ClMdAVEloqrQKfaC48PNLdgN/aVaLqUrluA==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
       integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
   /@types/resolve/0.0.8:
     dependencies:
-      '@types/node': 13.7.0
+      '@types/node': 13.7.1
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
@@ -1260,8 +1260,8 @@ packages:
   /browserslist/4.8.6:
     dependencies:
       caniuse-lite: 1.0.30001027
-      electron-to-chromium: 1.3.348
-      node-releases: 1.1.48
+      electron-to-chromium: 1.3.349
+      node-releases: 1.1.49
     dev: true
     hasBin: true
     resolution:
@@ -1862,13 +1862,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-FjEWG9Jb/ppK/2zToP+U5dds114fM1ZOJqMAR4aXXL5CvyPE9fiqBK/9YcwC9poIFQTEJk/EM/zyRwziziRZrg==
-  /electron-to-chromium/1.3.348:
+  /electron-to-chromium/1.3.349:
     dev: true
     resolution:
-      integrity: sha512-6O0IInybavGdYtcbI4ryF/9e3Qi8/soi6C68ELRseJuTwQPKq39uGgVVeQHG28t69Sgsky09nXBRhUiFXsZyFQ==
+      integrity: sha512-uEb2zs6EJ6OZIqaMsCSliYVgzE/f7/s1fLWqtvRtHg/v5KBF2xds974fUnyatfxIDgkqzQVwFtam5KExqywx0Q==
   /electron/5.0.13:
     dependencies:
-      '@types/node': 10.17.14
+      '@types/node': 10.17.15
       electron-download: 4.1.1
       extract-zip: 1.6.7
     dev: true
@@ -2620,7 +2620,7 @@ packages:
       node: '>=8.12.0'
     resolution:
       integrity: sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
-  /husky/4.2.1:
+  /husky/4.2.2:
     dependencies:
       chalk: 3.0.0
       ci-info: 2.0.0
@@ -2638,7 +2638,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-Qa0lRreeIf4Tl92sSs42ER6qc3hzoyQPPorzOrFWfPEVbdi6LuvJEqWKPk905fOWIR76iBpp7ECZNIwk+a8xuQ==
+      integrity: sha512-RAjZNO74zJyFJuRFESy+3LXTJvYbjGL+jhoSNJNF1DTKq2USrL5fEH70e1cJXEgvLaPyZt1NoGi0oNQQkPs4jA==
   /hyphenate-style-name/1.0.3:
     dev: false
     resolution:
@@ -3528,12 +3528,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
-  /node-releases/1.1.48:
+  /node-releases/1.1.49:
     dependencies:
       semver: 6.3.0
     dev: true
     resolution:
-      integrity: sha512-Hr8BbmUl1ujAST0K0snItzEA5zkJTQup8VNTKNfT6Zw8vTJkIiagUPNfxHmgDOyfFYNfKAul40sD0UEYTvwebw==
+      integrity: sha512-xH8t0LS0disN0mtRCh+eByxFPie+msJUBL/lJDBuap53QGiYPa9joh83K4pCZgWJ+2L4b9h88vCVdXQ60NO2bg==
   /normalize-package-data/2.5.0:
     dependencies:
       hosted-git-info: 2.8.5
@@ -3580,7 +3580,7 @@ packages:
       minimist: 1.2.0
       pretty-bytes: 1.0.4
       progress-stream: 1.2.0
-      request: 2.88.0
+      request: 2.88.2
       single-line-log: 1.1.2
       throttleit: 0.0.2
     dev: true
@@ -4033,10 +4033,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==
-  /punycode/1.4.1:
-    dev: true
-    resolution:
-      integrity: sha1-wNWmOycYgArY4esPpSachN1BhF4=
   /punycode/2.1.1:
     dev: true
     engines:
@@ -4292,7 +4288,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-UhTFOpJtNVJwdSf7q0FdvAjQbdo=
-  /request/2.88.0:
+  /request/2.88.2:
     dependencies:
       aws-sign2: 0.7.0
       aws4: 1.9.1
@@ -4311,14 +4307,15 @@ packages:
       performance-now: 2.1.0
       qs: 6.5.2
       safe-buffer: 5.2.0
-      tough-cookie: 2.4.3
+      tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 3.4.0
+    deprecated: 'request has been deprecated, see https://github.com/request/request/issues/3142'
     dev: true
     engines:
-      node: '>= 4'
+      node: '>= 6'
     resolution:
-      integrity: sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
+      integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
   /resolve-from/4.0.0:
     dev: true
     engines:
@@ -4421,7 +4418,7 @@ packages:
   /rollup/1.31.0:
     dependencies:
       '@types/estree': 0.0.42
-      '@types/node': 13.7.0
+      '@types/node': 13.7.1
       acorn: 7.1.0
     dev: true
     hasBin: true
@@ -4998,15 +4995,15 @@ packages:
       node: '>=8.0'
     resolution:
       integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
-  /tough-cookie/2.4.3:
+  /tough-cookie/2.5.0:
     dependencies:
       psl: 1.7.0
-      punycode: 1.4.1
+      punycode: 2.1.1
     dev: true
     engines:
       node: '>=0.8'
     resolution:
-      integrity: sha512-Q5srk/4vDM54WJsJio3XNn6K2sCG+CQ8G5Wz6bZhRZoAe/+TxjWB/GlFAnYEbkYVlON9FMk/fE3h2RLpPXo4lQ==
+      integrity: sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g==
   /trim-newlines/1.0.0:
     dev: true
     engines:
@@ -5366,7 +5363,7 @@ specifiers:
   eslint-config-prettier: ^6.10.0
   eslint-plugin-prettier: ^3.1.2
   eslint-plugin-react: ^7.18.3
-  husky: ^4.2.1
+  husky: ^4.2.2
   lint-staged: ^10.0.7
   nw: ^0.44.1
   prettier: ^1.19.1
