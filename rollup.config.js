@@ -19,18 +19,21 @@ const namedExports = {
   [find("react-is")]: ["isValidElementType"],
 };
 
+const isProduction = process.env.NODE_ENV === "production";
+
 export default {
   input: "src/App.js",
   output: {
     file: "dist/App.js",
     format: "cjs",
+    sourcemap: !isProduction && "inline",
   },
   external: ["nw.gui"],
   plugins: [
     babel(),
     replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
 
-    ...(process.env.NODE_ENV === "production"
+    ...(isProduction
       ? [resolve(), commonjs({ namedExports }), terser()]
       : [externals({ deps: true })]),
 
