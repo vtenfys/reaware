@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
@@ -25,17 +25,15 @@ function App() {
   return (
     <Router>
       <div className={styles.root}>
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route>
-              <p>route not implemented</p>
-              <p>
-                <Link to="/">go back</Link>
-              </p>
-            </Route>
-          </Switch>
-        </Suspense>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route>
+            <p>route not implemented</p>
+            <p>
+              <Link to="/">go back</Link>
+            </p>
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
