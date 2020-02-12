@@ -16,7 +16,7 @@ import { minify } from "html-minifier-terser";
 const find = id => require.resolve(id, { paths: ["node_modules/.pnpm"] });
 
 const namedExports = {
-  react: ["Component", "createContext"],
+  react: ["Component", "Suspense", "createContext", "useState", "useEffect"],
   [find("react-is")]: ["isValidElementType"],
 };
 
@@ -38,10 +38,11 @@ export default {
   plugins: [
     babel(),
     replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
+    externals({ deps: true }), // skip bundling dependencies
 
-    ...(isProduction
-      ? [resolve(), commonjs({ namedExports }), terser()]
-      : [externals({ deps: true })]),
+    isProduction && resolve({ preferBuiltins: true }),
+    isProduction && commonjs({ namedExports }),
+    isProduction && terser(),
 
     css({ raw: false }),
     html({
