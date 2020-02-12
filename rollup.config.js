@@ -24,7 +24,7 @@ export default {
     babel(),
     replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
     externals({ deps: true }), // skip bundling dependencies
-    isProduction && terser(),
+    isProduction && terser(), // minify production builds
 
     css({ raw: false }),
     html({
