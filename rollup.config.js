@@ -36,6 +36,7 @@ export default {
         const minifyOptions = {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
+          minifyJS: true,
         };
         return isProduction ? minify(result, minifyOptions) : result;
       },

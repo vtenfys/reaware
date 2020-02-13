@@ -7,12 +7,12 @@
   </head>
   <body>
     <div id="app"></div>
-    <% if (process.env.NODE_ENV === 'development') { %>
     <script>
-      require("react-devtools");
-      nw.Window.get().showDevTools();
+      if (nw.App.argv.includes("--devtools")) {
+        require("react-devtools");
+        nw.Window.get().showDevTools();
+      }
     </script>
-    <% } %>
     <script src="./App.js"></script>
   </body>
 </html>

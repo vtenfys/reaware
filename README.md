@@ -46,9 +46,7 @@ This differs from the `watch` command in that NPM packages are included in the b
 pnpm run dev
 ```
 
-This launches [React DevTools](https://www.npmjs.com/package/react-devtools) alongside the app itself.
-
-**Note:** Your app must be built in development mode for React DevTools to function.
+This launches Chrome DevTools and [React DevTools](https://www.npmjs.com/package/react-devtools) alongside the app itself, regardless of whether the app was built in development or production mode.
 
 Sometimes, the app may start before React DevTools are ready. If this occurs, right-click in the app window and select "Reload app". After reloading, React DevTools will connect.
 
@@ -58,7 +56,7 @@ Sometimes, the app may start before React DevTools are ready. If this occurs, ri
 pnpm start
 ```
 
-This is the same as development mode, except React DevTools are not opened.
+In this mode, Chrome DevTools and React DevTools are not automatically opened.
 
 ## License
 

@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "nw --mixed-context",
-    "dev": "react-devtools & pnpm start",
+    "dev": "react-devtools & pnpm start -- --devtools",
     "build": "NODE_ENV=production rollup --config",
     "watch": "NODE_ENV=development rollup --config --watch"
   },
