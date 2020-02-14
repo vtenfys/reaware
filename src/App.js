@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { createUseStyles } from "react-jss";
 
+import Spinner from "./components/sections/Spinner";
 import Home from "./routes/Home";
+
+import { createUseStyles } from "react-jss";
 import { colors } from "./lib/css";
 
 // Load global app styles
@@ -25,8 +27,7 @@ function App() {
   return (
     <Router>
       <div className={styles.root}>
-        {/* TODO: put a nice spinner component here */}
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
             <Route exact path="/">
               <Home />
