@@ -3,6 +3,8 @@ import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
 
 import { createUseStyles } from "react-jss";
 import { colors } from "../lib/css";
+import { getConfig } from "../lib/config";
+import { usePromise } from "../lib/hooks";
 
 import Container from "../components/core/Container";
 import Header from "../components/sections/Header";
@@ -21,13 +23,16 @@ const useStyles = createUseStyles({
   },
 });
 
+const configPromise = getConfig();
+
 function Home() {
   const classes = useStyles();
+  const config = usePromise(configPromise);
 
   return (
     <>
       <Header
-        title="Good evening, Name."
+        title={`Good evening, ${config.name}.`}
         subtitle="You have N cards to review today."
         icon={faCloudMoon}
       />
