@@ -4,7 +4,7 @@
 
 ReAware is an app designed to help improve your mental wellbeing, through a combination of [CBT-based techniques](https://en.wikipedia.org/wiki/Cognitive_behavioral_therapy) and [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition).
 
-ReAware is built with [React](https://reactjs.org/) and [NW.js](https://nwjs.io/).
+ReAware is built with [React](https://reactjs.org/) and [NW.js](https://nwjs.io/), and is heavily inspired by [Anki](https://apps.ankiweb.net/).
 
 ## Development
 
