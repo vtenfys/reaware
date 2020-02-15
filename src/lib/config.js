@@ -15,6 +15,7 @@ export async function getConfig() {
       if (error.status !== 404) throw error;
       await configDB.put(config);
     }
+    ready = true;
   }
 
   return config;
