@@ -17,10 +17,9 @@ export function usePromise(promise) {
     throw promise._suspender;
   }
 
-  switch (promise._status) {
-    case "error":
-      throw promise._result;
-    default:
-      return promise._result;
+  if (promise._status === "error") {
+    throw promise._result;
   }
+
+  return promise._result;
 }
