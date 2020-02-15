@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
 const promiseMap = new WeakMap();
-export function usePromise(promise) {
-  let data = {};
-  if (promiseMap.has(promise)) {
-    data = promiseMap.get(promise);
-  } else {
+
+function usePromise(promise) {
+  let data = promiseMap.get(promise);
+  if (data === undefined) {
+    data = { status: "pending" };
     promiseMap.set(promise, data);
   }
 
@@ -15,8 +15,6 @@ export function usePromise(promise) {
       promiseMap.delete(promise);
     };
   }, [promise]);
-
-  data.status = data.status ?? "pending";
 
   if (data.status === "pending") {
     data.suspender =
@@ -40,3 +38,5 @@ export function usePromise(promise) {
 
   return data.result;
 }
+
+export default usePromise;

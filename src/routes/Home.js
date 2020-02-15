@@ -4,7 +4,7 @@ import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
 import { createUseStyles } from "react-jss";
 import { colors } from "../lib/css";
 import { getConfig } from "../lib/config";
-import { usePromise } from "../lib/hooks";
+import { usePromise } from "../lib/hooks/index";
 
 import Container from "../components/core/Container";
 import Header from "../components/sections/Header";
