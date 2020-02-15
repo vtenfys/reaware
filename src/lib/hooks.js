@@ -2,17 +2,19 @@ export function usePromise(promise) {
   promise._status = promise._status ?? "pending";
 
   if (promise._status === "pending") {
-    const suspender = promise
-      .then(result => {
-        promise._status = "success";
-        promise._result = result;
-      })
-      .catch(error => {
-        promise._status = "error";
-        promise._result = error;
-      });
+    promise._suspender =
+      promise._suspender ??
+      promise
+        .then(result => {
+          promise._status = "success";
+          promise._result = result;
+        })
+        .catch(error => {
+          promise._status = "error";
+          promise._result = error;
+        });
 
-    throw suspender;
+    throw promise._suspender;
   }
 
   switch (promise._status) {
