@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
 import replace from "@rollup/plugin-replace";
-import { terser } from "rollup-plugin-terser";
 import externals from "rollup-plugin-node-externals";
+import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-porter";
 import html from "@rollup/plugin-html";
 
