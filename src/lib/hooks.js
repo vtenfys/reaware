@@ -1,25 +1,41 @@
-export function usePromise(promise) {
-  promise._status = promise._status ?? "pending";
+import { useEffect } from "react";
 
-  if (promise._status === "pending") {
-    promise._suspender =
-      promise._suspender ??
+const promiseMap = new WeakMap();
+export function usePromise(promise) {
+  let data = {};
+  if (promiseMap.has(promise)) {
+    data = promiseMap.get(promise);
+  } else {
+    promiseMap.set(promise, data);
+  }
+
+  useEffect(() => {
+    return () => {
+      promiseMap.delete(promise);
+    };
+  }, [promise]);
+
+  data.status = data.status ?? "pending";
+
+  if (data.status === "pending") {
+    data.suspender =
+      data.suspender ??
       promise
         .then(result => {
-          promise._status = "success";
-          promise._result = result;
+          data.status = "success";
+          data.result = result;
         })
         .catch(error => {
-          promise._status = "error";
-          promise._result = error;
+          data.status = "error";
+          data.result = error;
         });
 
-    throw promise._suspender;
+    throw data.suspender;
   }
 
-  if (promise._status === "error") {
-    throw promise._result;
+  if (data.status === "error") {
+    throw data.result;
   }
 
-  return promise._result;
+  return data.result;
 }
