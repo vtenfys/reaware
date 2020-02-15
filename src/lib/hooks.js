@@ -10,6 +10,7 @@ export function usePromise(promise) {
   }
 
   useEffect(() => {
+    // cleanup: free map memory
     return () => {
       promiseMap.delete(promise);
     };
