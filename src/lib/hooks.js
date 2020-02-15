@@ -1,5 +1,5 @@
 export function usePromise(promise) {
-  promise._status = promise._status || "pending";
+  promise._status = promise._status ?? "pending";
 
   const suspender = promise
     .then(result => {
