@@ -11,8 +11,9 @@ import { configDB } from "./db";
 
 let ready = false;
 let error = null;
+let initialConfig;
 
-let initialConfig = {
+const defaultConfig = {
   _id: "config",
   name: "David",
 };
@@ -27,7 +28,8 @@ async function loadInitialConfig() {
       throw e;
     }
 
-    await configDB.put(initialConfig);
+    const { rev } = await configDB.put(defaultConfig);
+    initialConfig = { ...defaultConfig, _rev: rev };
   }
 
   ready = true;
@@ -54,6 +56,7 @@ export function ConfigProvider({ children }) {
   }
 
   const isInitial = useRef(true);
+  const lastRev = useRef(initialConfig._rev);
   const [config, dispatch] = useReducer(reducer, initialConfig);
 
   // commit to the database when config changes
@@ -61,8 +64,9 @@ export function ConfigProvider({ children }) {
     async function commit() {
       // TODO: put in queue
       // TODO: handle errors
-      const { _id, _rev } = await configDB.get("config");
-      await configDB.put({ ...config, _id, _rev });
+
+      const { rev } = await configDB.put({ ...config, _rev: lastRev.current });
+      lastRev.current = rev; // store current revision for next commit
     }
 
     // only commit on changes
