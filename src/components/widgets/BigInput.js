@@ -20,7 +20,10 @@ const useStyles = createUseStyles({
   },
 
   input: {
-    width: "100%",
+    // Adjust width to make it look perceptibly correct -
+    // the light border makes it appear slightly thinner
+    width: "calc(100% + 2px)",
+    margin: [0, -1],
     backgroundColor: colors.white,
     border: [2, "solid", colors.medium],
     borderRadius: 4,
