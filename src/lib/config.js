@@ -55,25 +55,34 @@ export function ConfigProvider({ children }) {
     throw loadInitialConfig();
   }
 
-  const isInitial = useRef(true);
+  const isInitialConfig = useRef(true);
+  const awaitingCommit = useRef(null);
   const lastRev = useRef(initialConfig._rev);
+
   const [config, dispatch] = useReducer(reducer, initialConfig);
 
   // commit to the database when config changes
   useEffect(() => {
     async function commit() {
-      // TODO: put in queue
       // TODO: handle errors
+
+      // wait for existing commits
+      if (awaitingCommit.current !== null) {
+        return awaitingCommit.current.then(commit);
+      }
 
       const { rev } = await configDB.put({ ...config, _rev: lastRev.current });
       lastRev.current = rev; // store current revision for next commit
+
+      // unblock future commits
+      awaitingCommit.current = null;
     }
 
-    // only commit on changes
-    if (isInitial.current) {
-      isInitial.current = false;
+    // only commit after initial config
+    if (isInitialConfig.current) {
+      isInitialConfig.current = false;
     } else {
-      commit();
+      awaitingCommit.current = commit();
     }
   }, [config]);
 
