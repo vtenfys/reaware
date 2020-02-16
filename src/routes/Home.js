@@ -1,53 +1,39 @@
 import React from "react";
+import { Redirect, useHistory } from "react-router-dom";
 import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
-import { createUseStyles } from "react-jss";
 
 import { colors } from "../lib/css";
 import { useConfig } from "../lib/config";
 
-import Container from "../components/core/Container";
 import Header from "../components/sections/Header";
+import Main from "../components/sections/Main";
 import CardButton from "../components/widgets/CardButton";
 
-const useStyles = createUseStyles({
-  main: {
-    padding: [32, 0],
-    overflow: "auto",
-  },
-
-  container: {
-    "& a:not(:last-child)": {
-      marginBottom: 24,
-    },
-  },
-});
-
 function Home() {
-  const classes = useStyles();
   const { config } = useConfig();
+  const { push } = useHistory();
 
   return (
     <>
+      {config.firstRun && <Redirect to="/first-run" />}
       <Header
         title={`Good evening, ${config.name}.`}
         subtitle="You have N cards to review today."
         icon={faCloudMoon}
       />
-      <main className={classes.main}>
-        <Container className={classes.container}>
-          <CardButton
-            to="/review"
-            title="Review Today's Cards"
-            subtitle="Reviewing helps you mentally restructure journaled thoughts"
-          />
-          <CardButton
-            to="/new-thought"
-            title="Journal New Thought"
-            subtitle="Journaling helps you respond rationally to distorted thoughts"
-            color={colors.secondary}
-          />
-        </Container>
-      </main>
+      <Main>
+        <CardButton
+          onClick={() => push("/review")}
+          title="Review Today's Cards"
+          subtitle="Reviewing helps you mentally restructure journaled thoughts"
+        />
+        <CardButton
+          onClick={() => push("/new-thought")}
+          title="Journal New Thought"
+          subtitle="Journaling helps you respond rationally to distorted thoughts"
+          color={colors.secondary}
+        />
+      </Main>
     </>
   );
 }

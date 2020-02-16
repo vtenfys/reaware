@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -9,20 +8,22 @@ import { createUseStyles } from "react-jss";
 import { rem, colors, lighten, darken } from "../../lib/css";
 
 const useStyles = createUseStyles({
-  link: {
-    display: "block",
+  button: {
     padding: [20, 24],
     borderRadius: 4,
 
+    textAlign: "left",
     textDecoration: "none",
     backgroundColor: props => props.color,
     color: colors.light,
+    border: "none",
+    cursor: "pointer",
 
     "&:hover, &:focus": {
       backgroundColor: props => lighten(props.color),
       color: colors.white,
 
-      "& h2": {
+      "& span:first-child": {
         textDecoration: "underline",
       },
     },
@@ -34,10 +35,14 @@ const useStyles = createUseStyles({
   },
 
   title: {
+    display: "block",
+    fontWeight: 700,
     fontSize: rem(20),
   },
 
   subtitle: {
+    display: "block",
+    fontSize: rem(16),
     marginTop: 12,
   },
 
@@ -46,22 +51,22 @@ const useStyles = createUseStyles({
   },
 });
 
-function CardButton({ to, title, subtitle, color = colors.primary }) {
+function CardButton({ onClick, title, subtitle, color = colors.primary }) {
   const classes = useStyles({ color });
 
   return (
-    <Link to={to} className={classes.link} aria-label={title}>
-      <h2 className={classes.title}>
+    <button onClick={onClick} className={classes.button} aria-label={title}>
+      <span className={classes.title}>
         {title}
         <FontAwesomeIcon className={classes.icon} icon={faArrowRight} />
-      </h2>
-      {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
-    </Link>
+      </span>
+      {subtitle && <span className={classes.subtitle}>{subtitle}</span>}
+    </button>
   );
 }
 
 CardButton.propTypes = {
-  to: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   color: PropTypes.string,

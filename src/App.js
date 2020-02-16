@@ -1,13 +1,13 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import { createUseStyles } from "react-jss";
 import { colors } from "./lib/css";
 import { ConfigProvider } from "./lib/config";
 
-import Spinner from "./components/sections/Spinner";
 import Home from "./routes/Home";
+import FirstRun from "./routes/FirstRun";
 
 // Load global app styles
 import "./App.css";
@@ -27,23 +27,18 @@ function App() {
 
   return (
     <Router>
-      <div className={styles.root}>
-        <Suspense fallback={<Spinner />}>
-          <ConfigProvider>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route>
-                <p>route not implemented</p>
-                <p>
-                  <Link to="/">go back</Link>
-                </p>
-              </Route>
-            </Switch>
-          </ConfigProvider>
-        </Suspense>
-      </div>
+      <ConfigProvider>
+        <div className={styles.root}>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/first-run">
+              <FirstRun />
+            </Route>
+          </Switch>
+        </div>
+      </ConfigProvider>
     </Router>
   );
 }

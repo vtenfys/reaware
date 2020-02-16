@@ -16,6 +16,7 @@ export const darken = color =>
 
 export const colors = {
   light: "#eee",
+  medium: "#ccc",
   dark: "#333",
   white: "#fff",
   primary: "#00575c",
