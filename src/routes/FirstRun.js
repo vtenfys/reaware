@@ -29,7 +29,7 @@ function Home() {
           onChange={e => setName(e.target.value)}
         />
         <CardButton
-          title="Next"
+          title="Start"
           onClick={() => dispatch({ type: "completeFirstRun", name })}
         />
       </Main>
