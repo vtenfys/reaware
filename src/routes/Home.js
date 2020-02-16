@@ -44,7 +44,7 @@ function Home() {
 
   return (
     <>
-      {config.firstRun && <Redirect to="/first-run" />}
+      {config.firstRun && <Redirect to="/FirstRun" />}
       <Header
         title={`${mood.greeting}, ${config.name}.`}
         subtitle="You have N cards to review today."

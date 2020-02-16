@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/first-run">
+            <Route path="/FirstRun">
               <FirstRun />
             </Route>
           </Switch>
