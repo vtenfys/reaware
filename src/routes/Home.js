@@ -1,7 +1,7 @@
 import React from "react";
 import { faCloudMoon } from "@fortawesome/free-solid-svg-icons";
-
 import { createUseStyles } from "react-jss";
+
 import { colors } from "../lib/css";
 import { useConfig } from "../lib/config";
 
