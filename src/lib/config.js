@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 
-import { configDB } from "./db";
+import { configDB as db } from "./db";
 
 let ready = false;
 let error = null;
@@ -21,7 +21,7 @@ const defaultConfig = {
 
 async function loadInitialConfig() {
   try {
-    initialConfig = await configDB.get("config");
+    initialConfig = await db.get("config");
   } catch (e) {
     // treat other errors as real ones
     if (e.status !== 404) {
@@ -29,7 +29,7 @@ async function loadInitialConfig() {
       throw e;
     }
 
-    const { rev } = await configDB.put(defaultConfig);
+    const { rev } = await db.put(defaultConfig);
     initialConfig = { ...defaultConfig, _rev: rev };
   }
 
@@ -41,7 +41,7 @@ function reducer(state, action) {
     case "setName":
       return { ...state, name: action.name };
     default:
-      throw new Error();
+      throw new Error("Invalid action type");
   }
 }
 
@@ -76,14 +76,14 @@ export function ConfigProvider({ children }) {
         return awaitingCommit.current.then(commit);
       }
 
-      const { rev } = await configDB.put({ ...config, _rev: lastRev.current });
+      const { rev } = await db.put({ ...config, _rev: lastRev.current });
       lastRev.current = rev; // store current revision for next commit
 
       // unblock future commits
       awaitingCommit.current = null;
     }
 
-    // only commit after initial config
+    // only commit after changes to initial config
     if (isInitialConfig.current) {
       isInitialConfig.current = false;
     } else {
