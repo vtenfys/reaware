@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
 
 function Home() {
   const classes = useStyles();
-  const config = useConfig();
+  const { config } = useConfig();
 
   return (
     <>

@@ -4,6 +4,7 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { createUseStyles } from "react-jss";
 import { colors } from "./lib/css";
+import { ConfigProvider } from "./lib/config";
 
 import Spinner from "./components/sections/Spinner";
 import Home from "./routes/Home";
@@ -28,17 +29,19 @@ function App() {
     <Router>
       <div className={styles.root}>
         <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route>
-              <p>route not implemented</p>
-              <p>
-                <Link to="/">go back</Link>
-              </p>
-            </Route>
-          </Switch>
+          <ConfigProvider>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route>
+                <p>route not implemented</p>
+                <p>
+                  <Link to="/">go back</Link>
+                </p>
+              </Route>
+            </Switch>
+          </ConfigProvider>
         </Suspense>
       </div>
     </Router>
