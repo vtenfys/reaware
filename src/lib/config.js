@@ -1,6 +1,7 @@
 import React, {
   useRef,
   useReducer,
+  useState,
   useEffect,
   useContext,
   useMemo,
@@ -60,12 +61,16 @@ export function ConfigProvider({ children }) {
   const lastRev = useRef(initialConfig._rev);
 
   const [config, dispatch] = useReducer(reducer, initialConfig);
+  const [commitError, setCommitError] = useState(null);
+
+  // bubble up errors from the commit process
+  if (commitError !== null) {
+    throw commitError;
+  }
 
   // commit to the database when config changes
   useEffect(() => {
     async function commit() {
-      // TODO: handle errors
-
       // wait for existing commits
       if (awaitingCommit.current !== null) {
         return awaitingCommit.current.then(commit);
@@ -82,7 +87,8 @@ export function ConfigProvider({ children }) {
     if (isInitialConfig.current) {
       isInitialConfig.current = false;
     } else {
-      awaitingCommit.current = commit();
+      // bubble up errors from the commit process
+      awaitingCommit.current = commit().catch(setCommitError);
     }
   }, [config]);
 
