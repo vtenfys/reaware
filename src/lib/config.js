@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { configDB as db } from "./db";
 
 let ready = false;
-let error = null;
+let loadError = null;
 let initialConfig;
 
 const defaultConfig = {
@@ -22,11 +22,11 @@ const defaultConfig = {
 async function loadInitialConfig() {
   try {
     initialConfig = await db.get("config");
-  } catch (e) {
+  } catch (error) {
     // treat other errors as real ones
-    if (e.status !== 404) {
-      error = e;
-      throw e;
+    if (error.status !== 404) {
+      loadError = error;
+      throw error;
     }
 
     const { rev } = await db.put(defaultConfig);
@@ -48,8 +48,8 @@ function reducer(state, action) {
 const ConfigContext = React.createContext();
 
 export function ConfigProvider({ children }) {
-  if (error !== null) {
-    throw error;
+  if (loadError !== null) {
+    throw loadError;
   }
 
   if (!ready) {
