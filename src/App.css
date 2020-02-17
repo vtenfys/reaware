@@ -37,10 +37,10 @@ body {
   font-size: 4rem;
 
   /* fade out, then disappear after transition */
-  transition: opacity 0.125s, width 0s 0.125s, height 0s 0.125s;
+  transition: opacity 0.125s, visibility 0s 0.125s;
 }
 #spinner.hide {
   opacity: 0;
-  width: 0;
-  height: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
