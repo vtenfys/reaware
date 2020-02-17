@@ -22,7 +22,9 @@ Index.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default function({ htmlWebpackPlugin: { options } }) {
+function render({ htmlWebpackPlugin: { options } }) {
   const element = <Index title={options.title} />;
   return DOCTYPE + ReactDOMServer.renderToStaticMarkup(element);
 }
+
+export default render;
