@@ -1,16 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-
 import { createUseStyles } from "react-jss";
+import { config as faConfig } from "@fortawesome/fontawesome-svg-core";
+
 import { colors } from "./lib/css";
 import { ConfigProvider } from "./lib/config";
+import startApp from "./lib/startup";
 
 import Home from "./routes/Home";
 import FirstRun from "./routes/FirstRun";
 
 // Load global app styles
 import "./App.css";
+
+// Load FA CSS directly from HTML - prevent loading twice
+faConfig.autoAddCss = false;
 
 const useStyles = createUseStyles({
   root: {
@@ -43,4 +47,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+startApp(App);

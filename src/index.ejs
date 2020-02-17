@@ -4,9 +4,14 @@
     <meta charset="utf-8" />
     <title><%= title %></title>
     <link rel="stylesheet" href="./App.min.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@fortawesome/fontawesome-svg-core/styles.css"
+    />
   </head>
   <body>
     <div id="app"></div>
+    <div id="spinner"><%- spinner %></div>
     <script>
       if (nw.App.argv.includes("--devtools")) {
         require("react-devtools");

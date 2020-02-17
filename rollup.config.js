@@ -10,6 +10,15 @@ import fs from "fs";
 import ejs from "ejs";
 import { minify } from "html-minifier-terser";
 
+import { renderToString } from "react-dom/server";
+import { createElement } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+
+const spinner = renderToString(
+  createElement(FontAwesomeIcon, { icon: faCircleNotch, spin: true })
+);
+
 const isProduction = process.env.NODE_ENV === "production";
 
 export default {
@@ -31,7 +40,7 @@ export default {
       title: pkg.window.title,
       template(data) {
         const str = fs.readFileSync("src/index.ejs", "utf8");
-        const result = ejs.render(str, data);
+        const result = ejs.render(str, { ...data, spinner });
 
         const minifyOptions = {
           collapseBooleanAttributes: true,
