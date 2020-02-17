@@ -12,8 +12,10 @@ import FirstRun from "./routes/FirstRun";
 
 // Load global app styles
 import "./App.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "overlayscrollbars/css/OverlayScrollbars.css";
 
-// Load FA CSS directly from HTML - prevent loading twice
+// Prevent loading FA CSS twice
 faConfig.autoAddCss = false;
 
 const useStyles = createUseStyles({
