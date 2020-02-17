@@ -27,6 +27,7 @@ function Home() {
           hint="You can use your real name or a nickname."
           value={name}
           onChange={e => setName(e.target.value)}
+          autoComplete="off"
         />
         <CardButton
           title="Start"

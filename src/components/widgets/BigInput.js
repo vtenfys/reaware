@@ -34,7 +34,7 @@ const useStyles = createUseStyles({
   },
 });
 
-function BigInput({ label, hint, value, onChange }) {
+function BigInput({ label, hint, value, onChange, ...props }) {
   const classes = useStyles();
   const id = useUniqueID();
 
@@ -49,6 +49,7 @@ function BigInput({ label, hint, value, onChange }) {
         id={id}
         value={value}
         onChange={onChange}
+        {...props}
       />
     </div>
   );
