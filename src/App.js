@@ -7,6 +7,7 @@ import { ConfigProvider } from "./lib/config";
 
 import Home from "./routes/Home";
 import FirstRun from "./routes/FirstRun";
+import Settings from "./routes/Settings";
 
 const useStyles = createUseStyles({
   root: {
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/FirstRun">
               <FirstRun />
+            </Route>
+            <Route path="/Settings">
+              <Settings />
             </Route>
           </Switch>
         </div>

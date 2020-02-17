@@ -9,35 +9,29 @@ import Container from "../core/Container";
 
 const useStyles = createUseStyles({
   header: {
-    padding: [64, 0, 32],
+    paddingTop: props => (props.small ? 32 : 64),
+    paddingBottom: props => (props.small ? 24 : 32),
     backgroundColor: colors.dark,
     color: colors.light,
   },
 
-  title: {
-    marginBottom: 16,
-  },
-
   subtitle: {
     fontSize: rem(18),
-  },
-
-  icon: {
-    color: colors.emoji,
+    marginTop: 16,
   },
 });
 
-function Header({ title, subtitle, icon }) {
-  const classes = useStyles();
+function Header({ title, subtitle, icon, small = false }) {
+  const classes = useStyles({ small });
 
   return (
     <header className={classes.header}>
       <Container>
-        <h1 className={classes.title}>
+        <h1>
           {title}
-          <FontAwesomeIcon className={classes.icon} icon={icon} pull="right" />
+          <FontAwesomeIcon icon={icon} pull="right" />
         </h1>
-        <p className={classes.subtitle}>{subtitle}</p>
+        {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
       </Container>
     </header>
   );
@@ -45,8 +39,9 @@ function Header({ title, subtitle, icon }) {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   icon: PropTypes.object.isRequired,
+  small: PropTypes.bool,
 };
 
 export default Header;

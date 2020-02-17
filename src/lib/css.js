@@ -21,5 +21,4 @@ export const colors = {
   white: "#fff",
   primary: "#00575c",
   secondary: "#42505c",
-  emoji: "#ffd26b",
 };
