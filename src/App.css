@@ -39,6 +39,7 @@ body {
   /* fade out, then disappear after transition */
   transition: opacity 0.125s, visibility 0s 0.125s;
 }
+
 #spinner.hide {
   opacity: 0;
   visibility: hidden;
