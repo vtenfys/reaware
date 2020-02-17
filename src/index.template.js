@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import PropTypes from "prop-types";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
-
 const DOCTYPE = "<!DOCTYPE html>";
 
 function Index({ title }) {
@@ -16,9 +13,6 @@ function Index({ title }) {
       </head>
       <body>
         <div id="app" />
-        <div id="spinner">
-          <FontAwesomeIcon icon={faCircleNotch} spin />
-        </div>
       </body>
     </html>
   );
