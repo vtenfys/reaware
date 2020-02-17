@@ -21,5 +21,5 @@ export function useCurrentTime(interval = 1000 * 60) {
     };
   }, [interval]);
 
-  return time;
+  return { hour: time.getHours(), minute: time.getMinutes() };
 }

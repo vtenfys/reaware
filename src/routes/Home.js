@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import { faSmile, faSmileBeam } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,19 +28,20 @@ const moods = {
 function Home() {
   const { config } = useConfig();
   const { push } = useHistory();
+  const { hour } = useCurrentTime();
 
-  const currentHour = useCurrentTime().getHours();
-  let mood;
-  if (4 <= currentHour && currentHour < 12) {
-    // 04:00 to 11:59
-    mood = moods.morning;
-  } else if (12 <= currentHour && currentHour < 19) {
-    // 12:00 to 18:59
-    mood = moods.afternoon;
-  } else {
-    // 19:00 to 03:00
-    mood = moods.evening;
-  }
+  const mood = useMemo(() => {
+    if (4 <= hour && hour < 12) {
+      // 04:00 to 11:59
+      return moods.morning;
+    } else if (12 <= hour && hour < 19) {
+      // 12:00 to 18:59
+      return moods.afternoon;
+    } else {
+      // 19:00 to 03:00
+      return moods.evening;
+    }
+  }, [hour, moods]);
 
   return (
     <>
