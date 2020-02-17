@@ -24,6 +24,7 @@ const useStyles = createUseStyles({
 
   icon: {
     float: "right",
+    color: colors.emoji,
   },
 });
 
