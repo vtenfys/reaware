@@ -3,15 +3,14 @@ import replace from "@rollup/plugin-replace";
 import externals from "rollup-plugin-node-externals";
 import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
-import copy from "rollup-plugin-copy";
 import { terser } from "rollup-plugin-terser";
 
 const isProduction = process.env.NODE_ENV === "production";
 
 export default {
-  input: "src/App.js",
+  input: "src/main.js",
   output: {
-    file: "dist/App.js",
+    file: "dist/main.js",
     format: "cjs",
     sourcemap: !isProduction && "inline",
   },
@@ -27,7 +26,6 @@ export default {
     }),
     resolve(), // Required for modules excluded from externals
     postcss({ extract: true, minimize: isProduction }),
-    copy({ targets: [{ src: "src/index.html", dest: "dist" }] }),
     isProduction && terser(), // Minify production builds
   ],
 };
