@@ -4,6 +4,8 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.1.8_42855a367911e00e120b31acc6c31c71
   classnames: 2.2.6
   color: 3.1.2
+  overlayscrollbars: 1.10.3
+  overlayscrollbars-react: 0.2.1_446ba3f41291a22ebf8f563021df817c
   pouchdb: 7.2.1
   pouchdb-adapter-indexeddb: 7.2.1
   prop-types: 15.7.2
@@ -3997,6 +3999,20 @@ packages:
     dev: true
     resolution:
       integrity: sha1-IIhF6J4ZOtTZcUdLk5R3NqVtE/M=
+  /overlayscrollbars-react/0.2.1_446ba3f41291a22ebf8f563021df817c:
+    dependencies:
+      overlayscrollbars: 1.10.3
+      react: 16.12.0
+    dev: false
+    peerDependencies:
+      overlayscrollbars: ^1.10.0
+      react: ^16.4.0
+    resolution:
+      integrity: sha512-/QMQPXVboRhbTaDf9IRkix35tGLee5qk9BLKfuQKrG5h8kIqMpcuOWI/ues25WR8ItYBKosovxTdFtPebrIuAQ==
+  /overlayscrollbars/1.10.3:
+    dev: false
+    resolution:
+      integrity: sha512-iSxRC7DZ5XJwAZp5FKCz1vJaq+OleHjVAXAhC2Ea7ZXcYS4WbUKaHT+QYjHbEwBiJqm6bOEEfIbt3KR5MBentQ==
   /p-finally/1.0.0:
     dev: true
     engines:
@@ -5783,6 +5799,8 @@ specifiers:
   husky: ^4.2.3
   lint-staged: ^10.0.7
   nw: ^0.44.1
+  overlayscrollbars: ^1.10.3
+  overlayscrollbars-react: ^0.2.1
   pouchdb: ^7.2.1
   pouchdb-adapter-indexeddb: ^7.2.1
   prettier: ^1.19.1

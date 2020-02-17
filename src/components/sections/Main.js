@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { createUseStyles } from "react-jss";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 import Container from "../core/Container";
 
 const useStyles = createUseStyles({
+  wrapper: {
+    flexGrow: 1,
+  },
+
   main: {
     padding: [32, 0],
-    overflow: "auto",
   },
 
   container: {
@@ -21,9 +25,14 @@ function Main({ children }) {
   const classes = useStyles();
 
   return (
-    <main className={classes.main}>
-      <Container className={classes.container}>{children}</Container>
-    </main>
+    <OverlayScrollbarsComponent
+      className={classes.wrapper}
+      options={{ scrollbars: { autoHide: "move" } }}
+    >
+      <main className={classes.main}>
+        <Container className={classes.container}>{children}</Container>
+      </main>
+    </OverlayScrollbarsComponent>
   );
 }
 
