@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { faLaughBeam } from "@fortawesome/free-solid-svg-icons";
+import { faSmileBeam } from "@fortawesome/free-solid-svg-icons";
 
 import { useConfig } from "../lib/config";
 
@@ -19,7 +19,7 @@ function Home() {
       <Header
         title="Welcome to ReAware!"
         subtitle="Let's help you get started."
-        icon={faLaughBeam}
+        icon={faSmileBeam}
       />
       <Main>
         <BigInput

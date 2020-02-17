@@ -1,6 +1,11 @@
 import React, { useMemo } from "react";
 import { Redirect, useHistory } from "react-router-dom";
-import { faSmile, faSmileBeam } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudSun,
+  faSun,
+  faCloudMoon,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { colors } from "../lib/css";
 import { useConfig } from "../lib/config";
@@ -13,15 +18,19 @@ import CardButton from "../components/widgets/CardButton";
 const moods = {
   morning: {
     greeting: "Good morning",
-    icon: faSmile,
+    icon: faCloudSun,
   },
   afternoon: {
     greeting: "Good afternoon",
-    icon: faSmile,
+    icon: faSun,
   },
   evening: {
     greeting: "Good evening",
-    icon: faSmileBeam,
+    icon: faCloudMoon,
+  },
+  lateEvening: {
+    greeting: "Good evening",
+    icon: faMoon,
   },
 };
 
@@ -37,9 +46,12 @@ function Home() {
     } else if (12 <= hour && hour < 19) {
       // 12:00 to 18:59
       return moods.afternoon;
-    } else {
-      // 19:00 to 03:00
+    } else if (12 <= hour && hour < 22) {
+      // 19:00 to 21:59
       return moods.evening;
+    } else {
+      // 22:00 to 03:00
+      return moods.lateEvening;
     }
   }, [hour, moods]);
 
