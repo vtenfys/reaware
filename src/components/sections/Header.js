@@ -23,7 +23,6 @@ const useStyles = createUseStyles({
   },
 
   icon: {
-    float: "right",
     color: colors.emoji,
   },
 });
@@ -36,7 +35,7 @@ function Header({ title, subtitle, icon }) {
       <Container>
         <h1 className={classes.title}>
           {title}
-          <FontAwesomeIcon className={classes.icon} icon={icon} />
+          <FontAwesomeIcon className={classes.icon} icon={icon} pull="right" />
         </h1>
         <p className={classes.subtitle}>{subtitle}</p>
       </Container>

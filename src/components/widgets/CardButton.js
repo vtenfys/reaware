@@ -45,10 +45,6 @@ const useStyles = createUseStyles({
     fontSize: rem(16),
     marginTop: 12,
   },
-
-  icon: {
-    float: "right",
-  },
 });
 
 function CardButton({ onClick, title, subtitle, color = colors.primary }) {
@@ -58,7 +54,7 @@ function CardButton({ onClick, title, subtitle, color = colors.primary }) {
     <button onClick={onClick} className={classes.button} aria-label={title}>
       <span className={classes.title}>
         {title}
-        <FontAwesomeIcon className={classes.icon} icon={faArrowRight} />
+        <FontAwesomeIcon icon={faArrowRight} pull="right" />
       </span>
       {subtitle && <span className={classes.subtitle}>{subtitle}</span>}
     </button>
