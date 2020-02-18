@@ -995,10 +995,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-daFGV9GSs6USfPgxceDA8nlSe48XrVCJfDeYm7eokxq/ye7iuOH87hKXgMtEAVLFapkczbZsx868PMDT1Y0a6A==
-  /@types/node/13.7.1:
+  /@types/node/13.7.2:
     dev: true
     resolution:
-      integrity: sha512-Zq8gcQGmn4txQEJeiXo/KiLpon8TzAl0kmKH4zdWctPj05nWwp1ClMdAVEloqrQKfaC48PNLdgN/aVaLqUrluA==
+      integrity: sha512-uvilvAQbdJvnSBFcKJ2td4016urcGvsiR+N4dHGU87ml8O2Vl6l+ErOi9w0kXSPiwJ1AYlIW+0pDXDWWMOiWbw==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -1009,7 +1009,7 @@ packages:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
   /@types/resolve/0.0.8:
     dependencies:
-      '@types/node': 13.7.1
+      '@types/node': 13.7.2
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
@@ -5606,7 +5606,7 @@ packages:
   /rollup/1.31.1:
     dependencies:
       '@types/estree': 0.0.42
-      '@types/node': 13.7.1
+      '@types/node': 13.7.2
       acorn: 7.1.0
     dev: true
     hasBin: true
