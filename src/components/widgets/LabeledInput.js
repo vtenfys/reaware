@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
     padding: 8,
     marginTop: { sm: 8, lg: 12 }[size],
     fontSize: rem({ sm: 14, lg: 16 }[size]),
-    fontWeight: { sm: 400, lg: 700 }[size],
+    fontWeight: 700,
   }),
 });
 
