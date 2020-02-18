@@ -9,8 +9,8 @@ import Container from "../core/Container";
 
 const useStyles = createUseStyles({
   header: {
-    paddingTop: props => (props.small ? 32 : 64),
-    paddingBottom: props => (props.small ? 24 : 32),
+    paddingTop: props => ({ sm: 32, lg: 64 }[props.size]),
+    paddingBottom: props => ({ sm: 20, lg: 32 }[props.size]),
     backgroundColor: colors.dark,
     color: colors.light,
   },
@@ -21,8 +21,8 @@ const useStyles = createUseStyles({
   },
 });
 
-function Header({ title, subtitle, icon, small = false }) {
-  const classes = useStyles({ small });
+function Header({ title, subtitle, icon, size = "lg" }) {
+  const classes = useStyles({ size });
 
   return (
     <header className={classes.header}>
@@ -41,7 +41,7 @@ Header.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   icon: PropTypes.object.isRequired,
-  small: PropTypes.bool,
+  size: PropTypes.oneOf(["sm", "lg"]),
 };
 
 export default Header;

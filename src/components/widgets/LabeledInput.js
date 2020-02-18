@@ -7,16 +7,16 @@ import { colors, rem } from "../../lib/css";
 
 const useStyles = createUseStyles({
   label: {
-    fontSize: rem(24),
-    fontWeight: 700,
+    fontSize: props => rem({ sm: 18, lg: 24 }[props.size]),
+    fontWeight: props => ({ sm: 400, lg: 700 }[props.size]),
     display: "block",
   },
 
   hint: {
     display: "block",
-    fontSize: rem(16),
+    fontSize: props => rem({ sm: 14, lg: 16 }[props.size]),
     fontWeight: 400,
-    marginTop: 8,
+    marginTop: props => ({ sm: 6, lg: 8 }[props.size]),
   },
 
   input: {
@@ -27,15 +27,15 @@ const useStyles = createUseStyles({
     backgroundColor: colors.white,
     border: [2, "solid", colors.medium],
     borderRadius: 4,
-    fontSize: rem(16),
-    fontWeight: 700,
+    fontSize: props => rem({ sm: 14, lg: 16 }[props.size]),
+    fontWeight: props => ({ sm: 400, lg: 700 }[props.size]),
     padding: 8,
-    marginTop: 12,
+    marginTop: props => ({ sm: 8, lg: 12 }[props.size]),
   },
 });
 
-function BigInput({ label, hint, value, onChange, ...props }) {
-  const classes = useStyles();
+function LabeledInput({ label, hint, size = "sm", value, onChange, ...props }) {
+  const classes = useStyles({ size });
   const id = useUniqueID();
 
   return (
@@ -55,11 +55,12 @@ function BigInput({ label, hint, value, onChange, ...props }) {
   );
 }
 
-BigInput.propTypes = {
+LabeledInput.propTypes = {
   label: PropTypes.string.isRequired,
   hint: PropTypes.string,
+  size: PropTypes.oneOf(["sm", "lg"]),
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
-export default BigInput;
+export default LabeledInput;

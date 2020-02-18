@@ -6,7 +6,7 @@ import { useConfig } from "../lib/config";
 
 import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
-import BigInput from "../components/widgets/BigInput";
+import LabeledInput from "../components/widgets/LabeledInput";
 import CardButton from "../components/widgets/CardButton";
 
 function Home() {
@@ -22,11 +22,12 @@ function Home() {
         icon={faSmileBeam}
       />
       <Main>
-        <BigInput
+        <LabeledInput
           label="What shall we call you?"
           hint="You can use your real name or a nickname."
           value={name}
           onChange={e => setName(e.target.value)}
+          size="lg"
           autoComplete="off"
         />
         <CardButton
