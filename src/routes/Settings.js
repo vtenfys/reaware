@@ -18,6 +18,8 @@ import CardButton from "../components/widgets/CardButton";
 import ToolBar from "../components/sections/ToolBar";
 import InlineButton from "../components/widgets/InlineButton";
 
+// TODO: disable save/undo buttons until a change is made
+// TODO: disable back button when there are unsaved changes
 function Settings() {
   const { goBack } = useHistory();
   const { config } = useConfig();
