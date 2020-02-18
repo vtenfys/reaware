@@ -20,7 +20,9 @@ export default {
     replace({ "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV) }),
     externals({
       deps: true,
-      // Exclude modules containing CSS except for their main exports
+      // Exclude modules containing CSS except for their main exports.
+      // Specific import strings can be included, but only whole modules
+      // can be excluded, hence the need for this to look very strange
       exclude: ["@fortawesome/fontawesome-svg-core", "overlayscrollbars"],
       include: ["@fortawesome/fontawesome-svg-core", "overlayscrollbars"],
     }),
