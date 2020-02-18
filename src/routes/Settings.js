@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import {
   faCog,
   faExclamationTriangle,
-  faArrowLeft,
   faCheck,
-  faTimes,
+  faUndo,
+  faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useConfig } from "../lib/config";
@@ -18,8 +18,8 @@ import CardButton from "../components/widgets/CardButton";
 import ToolBar from "../components/sections/ToolBar";
 import InlineButton from "../components/widgets/InlineButton";
 
-// TODO: disable save/undo buttons until a change is made
-// TODO: disable back button when there are unsaved changes
+// TODO: change "done" to "save" after changes are made
+// TODO: disable revert button until a change is made
 // TODO: make reset button functional
 function Settings() {
   const { goBack } = useHistory();
@@ -43,19 +43,17 @@ function Settings() {
       </Main>
       <ToolBar
         left={
-          <InlineButton
-            text="Back"
-            icon={faArrowLeft}
-            iconPosition="left"
-            onClick={goBack}
-          />
-        }
-        right={
           <>
-            <InlineButton text="Save" icon={faCheck} color={colors.primary} />
-            <InlineButton text="Revert" icon={faTimes} />
+            <InlineButton
+              text="Done"
+              icon={faCheck}
+              color={colors.primary}
+              onClick={goBack}
+            />
+            <InlineButton text="Revert" icon={faUndo} />
           </>
         }
+        right={<InlineButton text="Help" icon={faQuestionCircle} />}
       />
     </>
   );
