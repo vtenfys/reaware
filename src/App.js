@@ -20,12 +20,12 @@ const useStyles = createUseStyles({
 });
 
 function App() {
-  const styles = useStyles();
+  const classes = useStyles();
 
   return (
     <Router>
       <ConfigProvider>
-        <div className={styles.root}>
+        <div className={classes.root}>
           <Switch>
             <Route exact path="/">
               <Home />
