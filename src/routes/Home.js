@@ -14,6 +14,7 @@ import { useCurrentTime } from "../lib/hooks";
 import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
 import CardButton from "../components/widgets/CardButton";
+import ToolBar from "../components/sections/ToolBar";
 
 const moods = {
   morning: {
@@ -78,6 +79,7 @@ function Home() {
           size="lg"
         />
       </Main>
+      <ToolBar></ToolBar>
     </>
   );
 }

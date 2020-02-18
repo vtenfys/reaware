@@ -11,6 +11,7 @@ import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
 import LabeledInput from "../components/widgets/LabeledInput";
 import CardButton from "../components/widgets/CardButton";
+import ToolBar from "../components/sections/ToolBar";
 
 function Settings() {
   const { config } = useConfig();
@@ -31,6 +32,7 @@ function Settings() {
           icon={faExclamationTriangle}
         />
       </Main>
+      <ToolBar></ToolBar>
     </>
   );
 }
