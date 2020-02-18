@@ -53,7 +53,7 @@ function Settings() {
         right={
           <>
             <InlineButton text="Save" icon={faCheck} color={colors.primary} />
-            <InlineButton text="Undo" icon={faTimes} />
+            <InlineButton text="Revert" icon={faTimes} />
           </>
         }
       />
