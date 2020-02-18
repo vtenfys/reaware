@@ -48,8 +48,6 @@ pnpm run dev
 
 This launches Chrome DevTools and [React DevTools](https://www.npmjs.com/package/react-devtools) alongside the app itself, regardless of whether the app was built in development or production mode.
 
-Sometimes, the app may start before React DevTools are ready. If this occurs, right-click in the app window and select "Reload app". After reloading, React DevTools will connect.
-
 **To run the app in production mode**, run the following command:
 
 ```sh
