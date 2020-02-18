@@ -8,12 +8,12 @@ import { rem, colors } from "../../lib/css";
 import Container from "../core/Container";
 
 const useStyles = createUseStyles({
-  header: {
-    paddingTop: props => ({ sm: 32, lg: 64 }[props.size]),
-    paddingBottom: props => ({ sm: 20, lg: 32 }[props.size]),
+  header: ({ size }) => ({
+    paddingTop: { sm: 32, lg: 64 }[size],
+    paddingBottom: { sm: 20, lg: 32 }[size],
     backgroundColor: colors.dark,
     color: colors.light,
-  },
+  }),
 
   subtitle: {
     fontSize: rem(18),

@@ -6,20 +6,20 @@ import { useUniqueID } from "../../lib/hooks";
 import { colors, rem } from "../../lib/css";
 
 const useStyles = createUseStyles({
-  label: {
-    fontSize: props => rem({ sm: 18, lg: 24 }[props.size]),
-    fontWeight: props => ({ sm: 400, lg: 700 }[props.size]),
+  label: ({ size }) => ({
+    fontSize: rem({ sm: 18, lg: 24 }[size]),
+    fontWeight: { sm: 400, lg: 700 }[size],
     display: "block",
-  },
+  }),
 
-  hint: {
+  hint: ({ size }) => ({
     display: "block",
-    fontSize: props => rem({ sm: 14, lg: 16 }[props.size]),
+    fontSize: rem({ sm: 14, lg: 16 }[size]),
     fontWeight: 400,
-    marginTop: props => ({ sm: 6, lg: 8 }[props.size]),
-  },
+    marginTop: { sm: 6, lg: 8 }[size],
+  }),
 
-  input: {
+  input: ({ size }) => ({
     // Adjust width to make it look perceptibly correct -
     // the light border makes it appear slightly thinner
     width: "calc(100% + 2px)",
@@ -27,11 +27,11 @@ const useStyles = createUseStyles({
     backgroundColor: colors.white,
     border: [2, "solid", colors.medium],
     borderRadius: 4,
-    fontSize: props => rem({ sm: 14, lg: 16 }[props.size]),
-    fontWeight: props => ({ sm: 400, lg: 700 }[props.size]),
     padding: 8,
-    marginTop: props => ({ sm: 8, lg: 12 }[props.size]),
-  },
+    marginTop: { sm: 8, lg: 12 }[size],
+    fontSize: rem({ sm: 14, lg: 16 }[size]),
+    fontWeight: { sm: 400, lg: 700 }[size],
+  }),
 });
 
 function LabeledInput({ label, hint, size = "sm", value, onChange, ...props }) {
