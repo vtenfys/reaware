@@ -68,12 +68,14 @@ function Home() {
           onClick={() => push("/review")}
           title="Review Today's Cards"
           subtitle="Reviewing helps you mentally restructure journaled thoughts"
+          size="lg"
         />
         <CardButton
           onClick={() => push("/new-thought")}
           title="Journal New Thought"
           subtitle="Journaling helps you respond rationally to distorted thoughts"
           color={colors.secondary}
+          size="lg"
         />
       </Main>
     </>

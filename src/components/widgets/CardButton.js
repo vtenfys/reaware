@@ -8,19 +8,19 @@ import { createUseStyles } from "react-jss";
 import { rem, colors, lighten, darken } from "../../lib/css";
 
 const useStyles = createUseStyles({
-  button: {
-    padding: [20, 24],
+  button: ({ color, size }) => ({
+    padding: { sm: [14, 16], lg: [20, 24] }[size],
     borderRadius: 4,
 
     textAlign: "left",
     textDecoration: "none",
-    backgroundColor: props => props.color,
+    backgroundColor: color,
     color: colors.light,
     border: "none",
     cursor: "pointer",
 
     "&:hover, &:focus": {
-      backgroundColor: props => lighten(props.color),
+      backgroundColor: lighten(color),
       color: colors.white,
 
       "& span:first-child": {
@@ -29,32 +29,39 @@ const useStyles = createUseStyles({
     },
 
     "&:active": {
-      backgroundColor: props => darken(props.color),
+      backgroundColor: darken(color),
       color: colors.light,
     },
-  },
+  }),
 
-  title: {
+  title: ({ size }) => ({
     display: "block",
-    fontWeight: 700,
-    fontSize: rem(20),
-  },
+    fontWeight: { sm: 400, lg: 700 }[size],
+    fontSize: rem({ sm: 18, lg: 20 }[size]),
+  }),
 
-  subtitle: {
+  subtitle: ({ size }) => ({
     display: "block",
-    fontSize: rem(16),
-    marginTop: 12,
-  },
+    fontSize: rem({ sm: 14, lg: 16 }[size]),
+    marginTop: { sm: 8, lg: 12 }[size],
+  }),
 });
 
-function CardButton({ onClick, title, subtitle, color = colors.primary }) {
-  const classes = useStyles({ color });
+function CardButton({
+  onClick,
+  title,
+  subtitle,
+  icon = faArrowRight,
+  color = colors.primary,
+  size = "sm",
+}) {
+  const classes = useStyles({ color, size });
 
   return (
     <button onClick={onClick} className={classes.button} aria-label={title}>
       <span className={classes.title}>
         {title}
-        <FontAwesomeIcon icon={faArrowRight} pull="right" />
+        <FontAwesomeIcon icon={icon} pull="right" />
       </span>
       {subtitle && <span className={classes.subtitle}>{subtitle}</span>}
     </button>
@@ -65,7 +72,9 @@ CardButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
+  icon: PropTypes.object,
   color: PropTypes.string,
+  size: PropTypes.oneOf(["sm", "lg"]),
 };
 
 export default CardButton;

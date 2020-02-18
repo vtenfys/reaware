@@ -33,6 +33,7 @@ function Home() {
         <CardButton
           title="Start"
           onClick={() => dispatch({ type: "completeFirstRun", name })}
+          size="lg"
         />
       </Main>
     </>
