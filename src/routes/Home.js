@@ -5,6 +5,8 @@ import {
   faSun,
   faCloudMoon,
   faMoon,
+  faSearch,
+  faQuestionCircle,
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -82,12 +84,22 @@ function Home() {
         />
       </Main>
       <ToolBar
-        right={
+        left={
           <InlineButton
-            text="Settings"
-            icon={faCog}
-            onClick={() => push("/Settings")}
+            text="Card Browser"
+            icon={faSearch}
+            iconPosition="left"
           />
+        }
+        right={
+          <>
+            <InlineButton
+              text="Settings"
+              icon={faCog}
+              onClick={() => push("/Settings")}
+            />
+            <InlineButton text="Help" icon={faQuestionCircle} />
+          </>
         }
       />
     </>

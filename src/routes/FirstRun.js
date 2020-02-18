@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { faSmileBeam } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSmileBeam,
+  faQuestionCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { useConfig } from "../lib/config";
 import { colors } from "../lib/css";
 
 import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
+import ToolBar from "../components/sections/ToolBar";
 import LabeledInput from "../components/widgets/LabeledInput";
 import CardButton from "../components/widgets/CardButton";
-import ToolBar from "../components/sections/ToolBar";
+import InlineButton from "../components/widgets/InlineButton";
 
 function Home() {
   const { config, dispatch } = useConfig();
@@ -39,8 +43,7 @@ function Home() {
           size="lg"
         />
       </Main>
-      {/* TODO: put appropriate buttons here */}
-      <ToolBar />
+      <ToolBar right={<InlineButton text="Help" icon={faQuestionCircle} />} />
     </>
   );
 }
