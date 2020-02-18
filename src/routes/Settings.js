@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   faCog,
   faExclamationTriangle,
+  faArrowLeft,
+  faCheck,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useConfig } from "../lib/config";
@@ -12,8 +16,10 @@ import Main from "../components/sections/Main";
 import LabeledInput from "../components/widgets/LabeledInput";
 import CardButton from "../components/widgets/CardButton";
 import ToolBar from "../components/sections/ToolBar";
+import InlineButton from "../components/widgets/InlineButton";
 
 function Settings() {
+  const { goBack } = useHistory();
   const { config } = useConfig();
   const [name, setName] = useState(config.name);
 
@@ -32,7 +38,22 @@ function Settings() {
           icon={faExclamationTriangle}
         />
       </Main>
-      <ToolBar></ToolBar>
+      <ToolBar
+        left={
+          <InlineButton
+            text="Back"
+            icon={faArrowLeft}
+            iconPosition="left"
+            onClick={goBack}
+          />
+        }
+        right={
+          <>
+            <InlineButton text="Save" icon={faCheck} color={colors.primary} />
+            <InlineButton text="Undo" icon={faTimes} />
+          </>
+        }
+      />
     </>
   );
 }

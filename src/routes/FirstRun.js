@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { faSmileBeam } from "@fortawesome/free-solid-svg-icons";
 
 import { useConfig } from "../lib/config";
+import { colors } from "../lib/css";
 
 import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
@@ -33,6 +34,7 @@ function Home() {
         <CardButton
           title="Start"
           onClick={() => dispatch({ type: "completeFirstRun", name })}
+          color={colors.primary}
           size="lg"
         />
       </Main>

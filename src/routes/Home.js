@@ -5,6 +5,7 @@ import {
   faSun,
   faCloudMoon,
   faMoon,
+  faCog,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { colors } from "../lib/css";
@@ -15,6 +16,7 @@ import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
 import CardButton from "../components/widgets/CardButton";
 import ToolBar from "../components/sections/ToolBar";
+import InlineButton from "../components/widgets/InlineButton";
 
 const moods = {
   morning: {
@@ -66,20 +68,28 @@ function Home() {
       />
       <Main>
         <CardButton
-          onClick={() => push("/review")}
+          onClick={() => push("/Review")}
           title="Review Today's Cards"
           subtitle="Reviewing helps you mentally restructure journaled thoughts"
+          color={colors.primary}
           size="lg"
         />
         <CardButton
-          onClick={() => push("/new-thought")}
+          onClick={() => push("/Journal")}
           title="Journal New Thought"
           subtitle="Journaling helps you respond rationally to distorted thoughts"
-          color={colors.secondary}
           size="lg"
         />
       </Main>
-      <ToolBar></ToolBar>
+      <ToolBar
+        right={
+          <InlineButton
+            text="Settings"
+            icon={faCog}
+            onClick={() => push("/Settings")}
+          />
+        }
+      />
     </>
   );
 }

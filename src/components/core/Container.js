@@ -5,23 +5,31 @@ import { createUseStyles } from "react-jss";
 import cx from "classnames";
 
 const useStyles = createUseStyles({
-  container: {
+  container: ({ direction, justify }) => ({
     display: "flex",
-    flexDirection: "column",
+    flexDirection: direction,
+    justifyContent: justify,
     margin: [0, "auto"],
     padding: [0, 48],
     maxWidth: 640,
-  },
+  }),
 });
 
-function Container({ children, className }) {
-  const classes = useStyles();
+function Container({
+  children,
+  className,
+  direction = "column",
+  justify = "normal",
+}) {
+  const classes = useStyles({ direction, justify });
   return <div className={cx(classes.container, className)}>{children}</div>;
 }
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  direction: PropTypes.oneOf(["row", "column"]),
+  justify: PropTypes.string,
 };
 
 export default Container;

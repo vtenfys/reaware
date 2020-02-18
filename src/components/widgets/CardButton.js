@@ -52,7 +52,7 @@ function CardButton({
   title,
   subtitle,
   icon = faArrowRight,
-  color = colors.primary,
+  color = colors.secondary,
   size = "sm",
 }) {
   const classes = useStyles({ color, size });
