@@ -36,7 +36,7 @@ const useStyles = createUseStyles({
 
   title: ({ size }) => ({
     display: "block",
-    fontWeight: { sm: 400, lg: 700 }[size],
+    fontWeight: 700,
     fontSize: rem({ sm: 18, lg: 20 }[size]),
   }),
 
