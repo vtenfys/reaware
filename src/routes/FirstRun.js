@@ -9,6 +9,7 @@ import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
 import LabeledInput from "../components/widgets/LabeledInput";
 import CardButton from "../components/widgets/CardButton";
+import ToolBar from "../components/sections/ToolBar";
 
 function Home() {
   const { config, dispatch } = useConfig();
@@ -38,6 +39,8 @@ function Home() {
           size="lg"
         />
       </Main>
+      {/* TODO: put appropriate buttons here */}
+      <ToolBar />
     </>
   );
 }
