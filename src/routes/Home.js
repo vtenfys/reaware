@@ -43,11 +43,11 @@ function Home() {
     if (4 <= hour && hour < 12) {
       // 04:00 to 11:59
       return moods.morning;
-    } else if (12 <= hour && hour < 19) {
-      // 12:00 to 18:59
+    } else if (12 <= hour && hour < 18) {
+      // 12:00 to 17:59
       return moods.afternoon;
-    } else if (12 <= hour && hour < 22) {
-      // 19:00 to 21:59
+    } else if (18 <= hour && hour < 22) {
+      // 18:00 to 21:59
       return moods.evening;
     } else {
       // 22:00 to 03:00
