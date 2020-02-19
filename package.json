@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "nw --mixed-context",
-    "dev": "react-devtools & nw --mixed-context --devtools",
+    "dev": "nw --mixed-context --devtools & react-devtools",
     "build": "NODE_ENV=production rollup --config",
     "watch": "NODE_ENV=development rollup --config --watch"
   },
