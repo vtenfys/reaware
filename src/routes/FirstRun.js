@@ -32,7 +32,7 @@ function Home() {
           label="What shall we call you?"
           hint="You can use your real name or a nickname."
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={event => setName(event.target.value)}
           size="lg"
           autoComplete="off"
         />

@@ -59,10 +59,10 @@ function Settings() {
         <LabeledInput
           label="What shall we call you?"
           value={settings.name}
-          onChange={e =>
+          onChange={event =>
             dispatchSettings({
               type: "setName",
-              name: e.target.value,
+              name: event.target.value,
             })
           }
           autoComplete="off"
