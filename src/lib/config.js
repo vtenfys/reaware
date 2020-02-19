@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 function getInitialConfig() {
   const storedConfig = localStorage.getItem("config");
+
   if (storedConfig !== null) {
     return JSON.parse(storedConfig);
   }
@@ -12,6 +13,7 @@ function getInitialConfig() {
   };
 }
 
+const ConfigContext = React.createContext();
 const initialConfig = getInitialConfig();
 
 function reducer(state, action) {
@@ -28,8 +30,6 @@ function reducer(state, action) {
     }
   }
 }
-
-const ConfigContext = React.createContext();
 
 export function ConfigProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialConfig);
