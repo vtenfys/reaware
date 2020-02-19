@@ -992,14 +992,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
-  /@types/node/10.17.15:
+  /@types/node/10.17.16:
     dev: true
     resolution:
-      integrity: sha512-daFGV9GSs6USfPgxceDA8nlSe48XrVCJfDeYm7eokxq/ye7iuOH87hKXgMtEAVLFapkczbZsx868PMDT1Y0a6A==
-  /@types/node/13.7.2:
+      integrity: sha512-A4283YSA1OmnIivcpy/4nN86YlnKRiQp8PYwI2KdPCONEBN093QTb0gCtERtkLyVNGKKIGazTZ2nAmVzQU51zA==
+  /@types/node/13.7.4:
     dev: true
     resolution:
-      integrity: sha512-uvilvAQbdJvnSBFcKJ2td4016urcGvsiR+N4dHGU87ml8O2Vl6l+ErOi9w0kXSPiwJ1AYlIW+0pDXDWWMOiWbw==
+      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
   /@types/parse-json/4.0.0:
     dev: true
     resolution:
@@ -1010,7 +1010,7 @@ packages:
       integrity: sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
   /@types/resolve/0.0.8:
     dependencies:
-      '@types/node': 13.7.2
+      '@types/node': 13.7.4
     dev: true
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
@@ -2164,7 +2164,7 @@ packages:
       integrity: sha512-zKO/wS+2ChI/jz9WAo647xSW8t2RmgRLFdbUb/77cORkUTargO+SCj4ctTHjBn2VeNFrsLgDT7IuDVrd3F8mLQ==
   /electron/5.0.13:
     dependencies:
-      '@types/node': 10.17.15
+      '@types/node': 10.17.16
       electron-download: 4.1.1
       extract-zip: 1.6.7
     dev: true
@@ -5566,7 +5566,7 @@ packages:
   /rollup/1.31.1:
     dependencies:
       '@types/estree': 0.0.42
-      '@types/node': 13.7.2
+      '@types/node': 13.7.4
       acorn: 7.1.0
     dev: true
     hasBin: true
