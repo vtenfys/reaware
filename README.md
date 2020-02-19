@@ -8,7 +8,7 @@ ReAware is built with [NW.js](https://nwjs.io/), [Rollup](https://rollupjs.org/)
 
 ## Development
 
-Before starting development, make sure you've already installed [Node.js](https://nodejs.org/en/download/) and [PNPM](https://pnpm.js.org/en/installation).
+Before starting development, make sure you've already installed [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.js.org/en/installation).
 
 ### Install dependencies
 
