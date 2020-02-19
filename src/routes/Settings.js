@@ -36,7 +36,7 @@ function Settings() {
           onChange={e => setName(e.target.value)}
         />
         <CardButton
-          title="Reset all data"
+          title="Reset All Data"
           color={colors.danger}
           icon={faExclamationTriangle}
         />
