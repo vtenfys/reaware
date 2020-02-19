@@ -34,27 +34,24 @@ const useStyles = createUseStyles({
     },
   }),
 
-  icon: ({ iconPosition }) => ({
-    marginRight: iconPosition === "left" ? 10 : 0,
-    marginLeft: iconPosition === "right" ? 10 : 0,
-  }),
+  icon: {
+    marginRight: 10,
+  },
 });
 
 function InlineButton({
   text,
   icon,
-  iconPosition = "right",
   color = colors.secondary,
   disabled,
   onClick,
 }) {
-  const classes = useStyles({ color, iconPosition });
+  const classes = useStyles({ color });
 
   return (
     <button className={classes.button} disabled={disabled} onClick={onClick}>
-      {iconPosition === "right" && text}
       {icon && <FontAwesomeIcon className={classes.icon} icon={icon} />}
-      {iconPosition === "left" && text}
+      {text}
     </button>
   );
 }
@@ -62,7 +59,6 @@ function InlineButton({
 InlineButton.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.object,
-  iconPosition: PropTypes.oneOf(["left", "right"]),
   color: PropTypes.string,
   disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,

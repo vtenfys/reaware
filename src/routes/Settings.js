@@ -80,14 +80,12 @@ function Settings() {
             <InlineButton
               text={settings.changed ? "Save" : "Back"}
               icon={settings.changed ? faCheck : faArrowLeft}
-              iconPosition="left"
               color={colors.primary}
               onClick={settings.changed ? applySettings : goBack}
             />
             <InlineButton
               text="Revert"
               icon={faUndo}
-              iconPosition="left"
               disabled={!settings.changed}
               onClick={() => dispatchSettings({ type: "reset", config })}
             />

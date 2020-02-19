@@ -84,13 +84,7 @@ function Home() {
         />
       </Main>
       <ToolBar
-        left={
-          <InlineButton
-            text="Card Browser"
-            icon={faSearch}
-            iconPosition="left"
-          />
-        }
+        left={<InlineButton text="Card Browser" icon={faSearch} />}
         right={
           <>
             <InlineButton
