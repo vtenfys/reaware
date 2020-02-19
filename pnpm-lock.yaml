@@ -2188,12 +2188,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
-  /emojis-list/2.1.0:
+  /emojis-list/3.0.0:
     dev: true
     engines:
-      node: '>= 0.10'
+      node: '>= 4'
     resolution:
-      integrity: sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
+      integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
   /encoding-down/6.3.0:
     dependencies:
       abstract-leveldown: 6.2.2
@@ -2755,7 +2755,7 @@ packages:
       integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
   /generic-names/2.0.1:
     dependencies:
-      loader-utils: 1.2.3
+      loader-utils: 1.4.0
     dev: true
     resolution:
       integrity: sha512-kPCHWa1m9wGG/OwQpeweTwM/PYiQLrUIxXbt/P4Nic3LbGjCP0YwrALHW1uNLKZ0LIMg+RF+XRlj2ekT9ZlZAQ==
@@ -3882,16 +3882,16 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-lWkFcI1YtLq0wiYbBPWfMcmTdMA=
-  /loader-utils/1.2.3:
+  /loader-utils/1.4.0:
     dependencies:
       big.js: 5.2.2
-      emojis-list: 2.1.0
+      emojis-list: 3.0.0
       json5: 1.0.1
     dev: true
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
+      integrity: sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
   /locate-path/5.0.0:
     dependencies:
       p-locate: 4.1.0
