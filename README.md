@@ -36,7 +36,7 @@ Leave the process running to enable automatic rebuilds when any source files are
 pnpm run build
 ```
 
-This differs from the `watch` command in that NPM packages are included in the bundle, rather than being required at runtime. Additionally, `process.env.NODE_ENV` is set to `production`, enabling performance optimizations in some packages.
+This sets `process.env.NODE_ENV` to `production`, enabling performance optimizations in some packages such as React, and doesn't watch for changes after the build is complete.
 
 ### Running the app
 
