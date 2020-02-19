@@ -28,7 +28,7 @@ devDependencies:
   eslint-plugin-react: 7.18.3_eslint@6.8.0
   husky: 4.2.3
   lint-staged: 10.0.7
-  nw: 0.44.1
+  nw: 0.44.2
   prettier: 1.19.1
   react-devtools: 4.4.0
   rollup: 1.31.1
@@ -1295,7 +1295,7 @@ packages:
   /browserslist/4.8.7:
     dependencies:
       caniuse-lite: 1.0.30001028
-      electron-to-chromium: 1.3.354
+      electron-to-chromium: 1.3.355
       node-releases: 1.1.49
     dev: true
     hasBin: true
@@ -2157,10 +2157,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-FjEWG9Jb/ppK/2zToP+U5dds114fM1ZOJqMAR4aXXL5CvyPE9fiqBK/9YcwC9poIFQTEJk/EM/zyRwziziRZrg==
-  /electron-to-chromium/1.3.354:
+  /electron-to-chromium/1.3.355:
     dev: true
     resolution:
-      integrity: sha512-24YMkNiZWOUeF6YeoscWfIGP0oMx+lJpU/miwI+lcu7plIDpyZn8Gx0lx0qTDlzGoz7hx+lpyD8QkbkX5L2Pqw==
+      integrity: sha512-zKO/wS+2ChI/jz9WAo647xSW8t2RmgRLFdbUb/77cORkUTargO+SCj4ctTHjBn2VeNFrsLgDT7IuDVrd3F8mLQ==
   /electron/5.0.13:
     dependencies:
       '@types/node': 10.17.15
@@ -4222,7 +4222,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
-  /nw/0.44.1:
+  /nw/0.44.2:
     dependencies:
       chalk: 1.1.3
       decompress: 4.2.0
@@ -4237,7 +4237,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-Wwc0YMBIvTj20P+/5RK5tQK0p2t5H/ZZXyYzU/JAltW1xVjXFp0UY6JNuO1bHMeoLvy7+60BIUXux0BGyBWmIg==
+      integrity: sha512-IgbcpRsK1xGLjuXm/zfQ7wNA56OSoIZIFmSprWMwDkYBpR7CmapT5mkZSeM0gswgqPHorSWxep+ykkZWLAnzag==
   /oauth-sign/0.9.0:
     dev: true
     resolution:
@@ -6654,7 +6654,7 @@ specifiers:
   eslint-plugin-react: ^7.18.3
   husky: ^4.2.3
   lint-staged: ^10.0.7
-  nw: ^0.44.1
+  nw: ^0.44.2
   overlayscrollbars: ^1.10.3
   overlayscrollbars-react: ^0.2.1
   pouchdb: ^7.2.1
