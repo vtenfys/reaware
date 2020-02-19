@@ -40,7 +40,7 @@ const moods = {
 };
 
 function Home() {
-  const { config } = useConfig();
+  const [config] = useConfig();
   const { push } = useHistory();
   const { hour } = useCurrentTime();
 

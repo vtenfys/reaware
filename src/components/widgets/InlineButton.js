@@ -20,6 +20,11 @@ const useStyles = createUseStyles({
     fontWeight: 700,
     cursor: "pointer",
 
+    "&[disabled]": {
+      opacity: 0.5,
+      cursor: "default",
+    },
+
     "&:hover, &:focus": {
       backgroundColor: lighten(color),
     },
@@ -40,12 +45,13 @@ function InlineButton({
   icon,
   iconPosition = "right",
   color = colors.secondary,
+  disabled,
   onClick,
 }) {
   const classes = useStyles({ color, iconPosition });
 
   return (
-    <button className={classes.button} onClick={onClick}>
+    <button className={classes.button} disabled={disabled} onClick={onClick}>
       {iconPosition === "right" && text}
       {icon && <FontAwesomeIcon className={classes.icon} icon={icon} />}
       {iconPosition === "left" && text}
@@ -58,6 +64,7 @@ InlineButton.propTypes = {
   icon: PropTypes.object,
   iconPosition: PropTypes.oneOf(["left", "right"]),
   color: PropTypes.string,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
 };
 

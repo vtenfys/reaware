@@ -16,29 +16,33 @@ const initialConfig = getInitialConfig();
 
 function reducer(state, action) {
   switch (action.type) {
-    case "completeFirstRun":
+    case "completeFirstRun": {
       return { ...state, firstRun: false, name: action.name };
-    case "setName":
-      return { ...state, name: action.name };
-    default:
+    }
+    case "applySettings": {
+      const { settings } = action;
+      return { ...state, name: settings.name };
+    }
+    default: {
       throw new Error("Invalid action type");
+    }
   }
 }
 
 const ConfigContext = React.createContext();
 
 export function ConfigProvider({ children }) {
-  const [config, dispatch] = useReducer(reducer, initialConfig);
+  const [state, dispatch] = useReducer(reducer, initialConfig);
 
   // commit config to local storage
   useEffect(() => {
-    localStorage.setItem("config", JSON.stringify(config));
-  }, [config]);
+    localStorage.setItem("config", JSON.stringify(state));
+  }, [state]);
 
   // see https://hswolff.com/blog/how-to-usecontext-with-usereducer/#performance-concerns
   const contextValue = useMemo(() => {
-    return { config, dispatch };
-  }, [config, dispatch]);
+    return [state, dispatch];
+  }, [state, dispatch]);
 
   return (
     <ConfigContext.Provider value={contextValue}>

@@ -16,7 +16,7 @@ import CardButton from "../components/widgets/CardButton";
 import InlineButton from "../components/widgets/InlineButton";
 
 function Home() {
-  const { config, dispatch } = useConfig();
+  const [config, dispatch] = useConfig();
   const [name, setName] = useState("");
 
   return (
