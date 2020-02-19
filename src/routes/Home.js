@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import {
   faCloudSun,
   faSun,
@@ -41,7 +41,7 @@ const moods = {
 
 function Home() {
   const [config] = useConfig();
-  const { push } = useHistory();
+  const navigate = useNavigate();
   const { hour } = useCurrentTime();
 
   const mood = useMemo(() => {
@@ -62,7 +62,7 @@ function Home() {
 
   return (
     <>
-      {config.firstRun && <Redirect to="/FirstRun" />}
+      {config.firstRun && <Navigate to="/FirstRun" replace />}
       <Header
         title={`${mood.greeting}, ${config.name}.`}
         subtitle="You have N cards to review today."
@@ -70,14 +70,14 @@ function Home() {
       />
       <Main>
         <CardButton
-          onClick={() => push("/Review")}
+          onClick={() => navigate("/Review")}
           title="Review Today's Cards"
           subtitle="Reviewing helps you mentally restructure journaled thoughts"
           color={colors.primary}
           size="lg"
         />
         <CardButton
-          onClick={() => push("/Journal")}
+          onClick={() => navigate("/Journal")}
           title="Journal New Thought"
           subtitle="Journaling helps you respond rationally to distorted thoughts"
           size="lg"
@@ -90,7 +90,7 @@ function Home() {
             <InlineButton
               text="Settings"
               icon={faCog}
-              onClick={() => push("/Settings")}
+              onClick={() => navigate("/Settings")}
             />
             <InlineButton text="Help" icon={faQuestionCircle} />
           </>

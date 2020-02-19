@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 
 import { colors } from "./lib/css";
@@ -26,17 +26,11 @@ function App() {
     <Router>
       <ConfigProvider>
         <div className={classes.root}>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/FirstRun">
-              <FirstRun />
-            </Route>
-            <Route path="/Settings">
-              <Settings />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="FirstRun" element={<FirstRun />} />
+            <Route path="Settings" element={<Settings />} />
+          </Routes>
         </div>
       </ConfigProvider>
     </Router>
