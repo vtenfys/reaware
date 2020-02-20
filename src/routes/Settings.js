@@ -38,6 +38,8 @@ function reducer(state, action) {
 }
 
 // TODO: make reset button functional
+// TODO: replace navigate(-1) with a more idiomatic API if/when available
+//       see https://github.com/ReactTraining/react-router/issues/7159
 function Settings() {
   const navigate = useNavigate();
 
