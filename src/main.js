@@ -20,7 +20,10 @@ async function main() {
   }
 
   const ReactDOM = await import("react-dom");
-  ReactDOM.render(<App />, document.getElementById("app"));
+
+  // pass rootElement to App so it can be styled
+  const rootElement = document.getElementById("root");
+  ReactDOM.render(<App rootElement={rootElement} />, rootElement);
 }
 
 main(); // Start app

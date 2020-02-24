@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import PropTypes from "prop-types";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 
@@ -13,28 +14,35 @@ const useStyles = createUseStyles({
   root: {
     backgroundColor: colors.light,
     color: colors.dark,
-    height: "100%",
+    flexGrow: 1,
     display: "flex",
     flexDirection: "column",
   },
 });
 
-function App() {
+function App({ rootElement }) {
   const classes = useStyles();
+
+  useLayoutEffect(() => {
+    rootElement.classList.add(classes.root);
+    return () => rootElement.classList.remove(classes.root);
+  }, [rootElement, classes]);
 
   return (
     <Router>
       <ConfigProvider>
-        <div className={classes.root}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="FirstRun" element={<FirstRun />} />
-            <Route path="Settings" element={<Settings />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="FirstRun" element={<FirstRun />} />
+          <Route path="Settings" element={<Settings />} />
+        </Routes>
       </ConfigProvider>
     </Router>
   );
 }
+
+App.propTypes = {
+  rootElement: PropTypes.instanceOf(Element),
+};
 
 export default App;
