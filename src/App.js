@@ -42,7 +42,7 @@ function App({ rootElement }) {
 }
 
 App.propTypes = {
-  rootElement: PropTypes.instanceOf(Element),
+  rootElement: PropTypes.instanceOf(Element).isRequired,
 };
 
 export default App;
