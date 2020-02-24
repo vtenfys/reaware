@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
   root: {
     backgroundColor: colors.light,
     color: colors.dark,
-    minHeight: "100%",
+    height: "100%",
     display: "flex",
     flexDirection: "column",
   },

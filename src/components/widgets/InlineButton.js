@@ -13,7 +13,6 @@ const useStyles = createUseStyles({
     borderRadius: 4,
     border: "none",
     height: 24,
-    lineHeight: "24px",
     padding: [0, 10],
 
     fontSize: rem(12),
