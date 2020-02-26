@@ -18,16 +18,12 @@ const initialConfig = getInitialConfig();
 
 function reducer(state, action) {
   switch (action.type) {
-    case "completeFirstRun": {
+    case "completeFirstRun":
       return { ...state, firstRun: false, name: action.name };
-    }
-    case "applySettings": {
-      const { settings } = action;
-      return { ...state, name: settings.name };
-    }
-    default: {
+    case "applySettings":
+      return { ...state, name: action.settings.name };
+    default:
       throw new Error("Invalid action type");
-    }
   }
 }
 

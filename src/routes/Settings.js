@@ -25,15 +25,12 @@ function init(config) {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "setName": {
+    case "setName":
       return { ...state, name: action.name, changed: true };
-    }
-    case "reset": {
+    case "reset":
       return init(action.config);
-    }
-    default: {
+    default:
       throw new Error("Invalid action type");
-    }
   }
 }
 
