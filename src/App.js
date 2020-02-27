@@ -1,14 +1,10 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useMemo } from "react";
 import PropTypes from "prop-types";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, useLocation } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 
 import { colors } from "./lib/css";
 import { ConfigProvider } from "./lib/config";
-
-import Home from "./routes/Home";
-import FirstRun from "./routes/FirstRun";
-import Settings from "./routes/Settings";
 
 const useStyles = createUseStyles({
   root: {
@@ -31,14 +27,21 @@ function App({ rootElement }) {
   return (
     <ConfigProvider>
       <HashRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/FirstRun" component={FirstRun} />
-          <Route path="/Settings" component={Settings} />
-        </Switch>
+        <RouteManager />
       </HashRouter>
     </ConfigProvider>
   );
+}
+
+function RouteManager() {
+  const { pathname } = useLocation();
+  const route = pathname.replace(/^\//, "");
+
+  const Component = useMemo(() => {
+    return require(`./routes/${route}`).default;
+  }, [pathname]);
+
+  return <Component />;
 }
 
 App.propTypes = {

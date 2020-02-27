@@ -9,15 +9,15 @@ import {
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { useConfig } from "../lib/config";
-import { colors } from "../lib/css";
+import { useConfig } from "../../lib/config";
+import { colors } from "../../lib/css";
 
-import Header from "../components/sections/Header";
-import Main from "../components/sections/Main";
-import LabeledInput from "../components/widgets/LabeledInput";
-import CardButton from "../components/widgets/CardButton";
-import ToolBar from "../components/sections/ToolBar";
-import InlineButton from "../components/widgets/InlineButton";
+import Header from "../../components/sections/Header";
+import Main from "../../components/sections/Main";
+import LabeledInput from "../../components/widgets/LabeledInput";
+import CardButton from "../../components/widgets/CardButton";
+import ToolBar from "../../components/sections/ToolBar";
+import InlineButton from "../../components/widgets/InlineButton";
 
 function init(config) {
   return { name: config.name, changed: false };
