@@ -20,3 +20,8 @@ body {
     "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji";
   line-height: 1;
 }
+
+/* Ensure all FA icons are square */
+.svg-inline--fa {
+  width: 1em !important;
+}
