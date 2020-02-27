@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   faCog,
   faExclamationTriangle,
@@ -36,7 +36,7 @@ function reducer(state, action) {
 
 // TODO: make reset button functional
 function Settings() {
-  const navigate = useNavigate();
+  const { goBack } = useHistory();
 
   // Global configuration in local storage
   const [config, dispatchConfig] = useConfig();
@@ -47,7 +47,7 @@ function Settings() {
 
   const applySettings = () => {
     dispatchConfig({ type: "applySettings", settings });
-    navigate(-1);
+    goBack();
   };
 
   return (
@@ -78,7 +78,7 @@ function Settings() {
               text={settings.changed ? "Save" : "Back"}
               icon={settings.changed ? faCheck : faArrowLeft}
               color={colors.primary}
-              onClick={settings.changed ? applySettings : () => navigate(-1)}
+              onClick={settings.changed ? applySettings : goBack}
             />
             <InlineButton
               text="Revert"

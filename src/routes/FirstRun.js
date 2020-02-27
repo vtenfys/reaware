@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import {
   faSmileBeam,
   faQuestionCircle,
@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <>
-      {!config.firstRun && <Navigate to="/" replace />}
+      {!config.firstRun && <Redirect to="/" />}
       <Header
         title="Welcome to ReAware!"
         subtitle="Let's help you get started."

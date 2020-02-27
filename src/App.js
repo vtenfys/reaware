@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import PropTypes from "prop-types";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 
 import { colors } from "./lib/css";
@@ -29,15 +29,15 @@ function App({ rootElement }) {
   }, [rootElement, classes]);
 
   return (
-    <Router>
-      <ConfigProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="FirstRun" element={<FirstRun />} />
-          <Route path="Settings" element={<Settings />} />
-        </Routes>
-      </ConfigProvider>
-    </Router>
+    <ConfigProvider>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/FirstRun" component={FirstRun} />
+          <Route path="/Settings" component={Settings} />
+        </Switch>
+      </HashRouter>
+    </ConfigProvider>
   );
 }
 
