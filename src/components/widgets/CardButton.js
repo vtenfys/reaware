@@ -19,18 +19,25 @@ const useStyles = createUseStyles({
     border: "none",
     cursor: "pointer",
 
-    "&:hover, &:focus": {
-      backgroundColor: lighten(color),
-      color: colors.white,
-
-      "& span:first-child": {
-        textDecoration: "underline",
-      },
+    "&[disabled]": {
+      opacity: 0.5,
+      cursor: "default",
     },
 
-    "&:active": {
-      backgroundColor: darken(color),
-      color: colors.light,
+    "&:not([disabled])": {
+      "&:hover, &:focus": {
+        backgroundColor: lighten(color),
+        color: colors.white,
+
+        "& span:first-child": {
+          textDecoration: "underline",
+        },
+      },
+
+      "&:active": {
+        backgroundColor: darken(color),
+        color: colors.light,
+      },
     },
   }),
 
@@ -49,6 +56,7 @@ const useStyles = createUseStyles({
 
 function CardButton({
   onClick,
+  disabled = false,
   title,
   subtitle,
   icon = faArrowRight,
@@ -58,7 +66,12 @@ function CardButton({
   const classes = useStyles({ color, size });
 
   return (
-    <button onClick={onClick} className={classes.button} aria-label={title}>
+    <button
+      className={classes.button}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={title}
+    >
       <span className={classes.title}>
         {title}
         <FontAwesomeIcon icon={icon} pull="right" />
@@ -70,6 +83,7 @@ function CardButton({
 
 CardButton.propTypes = {
   onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   icon: PropTypes.object,

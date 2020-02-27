@@ -62,7 +62,7 @@ function Home() {
 
   return (
     <>
-      {config.firstRun && <Redirect to="/FirstRun" />}
+      {config.firstRun && <Redirect to="FirstRun" />}
       <Header
         title={`${mood.greeting}, ${config.name}.`}
         subtitle="You have N cards to review today."
@@ -70,14 +70,14 @@ function Home() {
       />
       <Main>
         <CardButton
-          onClick={() => push("/Review")}
+          onClick={() => push("Review")}
           title="Review Today's Cards"
           subtitle="Reviewing helps you mentally restructure journaled thoughts"
           color={colors.primary}
           size="lg"
         />
         <CardButton
-          onClick={() => push("/Journal")}
+          onClick={() => push("Journal")}
           title="Journal New Thought"
           subtitle="Journaling helps you respond rationally to distorted thoughts"
           size="lg"
@@ -90,7 +90,7 @@ function Home() {
             <InlineButton
               text="Settings"
               icon={faCog}
-              onClick={() => push("/Settings")}
+              onClick={() => push("Settings/")}
             />
             <InlineButton text="Help" icon={faQuestionCircle} />
           </>

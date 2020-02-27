@@ -24,12 +24,14 @@ const useStyles = createUseStyles({
       cursor: "default",
     },
 
-    "&:hover, &:focus": {
-      backgroundColor: lighten(color),
-    },
+    "&:not([disabled])": {
+      "&:hover, &:focus": {
+        backgroundColor: lighten(color),
+      },
 
-    "&:active": {
-      backgroundColor: darken(color),
+      "&:active": {
+        backgroundColor: darken(color),
+      },
     },
   }),
 
@@ -42,7 +44,7 @@ function InlineButton({
   text,
   icon,
   color = colors.secondary,
-  disabled,
+  disabled = false,
   onClick,
 }) {
   const classes = useStyles({ color });

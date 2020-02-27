@@ -5,20 +5,9 @@ import { createUseStyles } from "react-jss";
 import { useUniqueID } from "../../lib/hooks";
 import { colors, rem } from "../../lib/css";
 
+import FormLabel from "./FormLabel";
+
 const useStyles = createUseStyles({
-  label: ({ size }) => ({
-    fontSize: rem({ sm: 18, lg: 24 }[size]),
-    fontWeight: { sm: 400, lg: 700 }[size],
-    display: "block",
-  }),
-
-  hint: ({ size }) => ({
-    display: "block",
-    fontSize: rem({ sm: 14, lg: 16 }[size]),
-    fontWeight: 400,
-    marginTop: { sm: 6, lg: 8 }[size],
-  }),
-
   input: ({ size }) => ({
     // Adjust width to make it look perceptibly correct -
     // the light border makes it appear slightly thinner
@@ -40,10 +29,7 @@ function LabeledInput({ label, hint, size = "sm", value, onChange, ...props }) {
 
   return (
     <div>
-      <label htmlFor={id} className={classes.label}>
-        {label}
-        {hint && <span className={classes.hint}>{hint}</span>}
-      </label>
+      <FormLabel htmlFor={id} size={size} text={label} hint={hint} />
       <input
         className={classes.input}
         id={id}

@@ -34,9 +34,8 @@ function reducer(state, action) {
   }
 }
 
-// TODO: make reset button functional
 function Settings() {
-  const { goBack } = useHistory();
+  const { push, goBack } = useHistory();
 
   // Global configuration in local storage
   const [config, dispatchConfig] = useConfig();
@@ -67,8 +66,10 @@ function Settings() {
         />
         <CardButton
           title="Reset All Data"
+          disabled={settings.changed}
           color={colors.danger}
           icon={faExclamationTriangle}
+          onClick={() => push("ResetAllData")}
         />
       </Main>
       <ToolBar
