@@ -33,7 +33,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
-    "overlayscrollbars": "^1.10.3",
+    "overlayscrollbars": "^1.11.0",
     "overlayscrollbars-react": "^0.2.1",
     "pouchdb": "^7.2.1",
     "pouchdb-adapter-indexeddb": "^7.2.1",

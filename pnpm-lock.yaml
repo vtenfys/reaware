@@ -4,8 +4,8 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.1.8_e05d73b74d08567b32d0e5d8282c02fd
   classnames: 2.2.6
   color: 3.1.2
-  overlayscrollbars: 1.10.3
-  overlayscrollbars-react: 0.2.1_e09ab52b836967985f19faeabc1596b7
+  overlayscrollbars: 1.11.0
+  overlayscrollbars-react: 0.2.1_daf5d8fd4837906ce447d06c433dc892
   pouchdb: 7.2.1
   pouchdb-adapter-indexeddb: 7.2.1
   prop-types: 15.7.2
@@ -5874,9 +5874,9 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
-  /overlayscrollbars-react/0.2.1_e09ab52b836967985f19faeabc1596b7:
+  /overlayscrollbars-react/0.2.1_daf5d8fd4837906ce447d06c433dc892:
     dependencies:
-      overlayscrollbars: 1.10.3
+      overlayscrollbars: 1.11.0
       react: 16.13.0
     dev: false
     peerDependencies:
@@ -5884,10 +5884,10 @@ packages:
       react: ^16.4.0
     resolution:
       integrity: sha512-/QMQPXVboRhbTaDf9IRkix35tGLee5qk9BLKfuQKrG5h8kIqMpcuOWI/ues25WR8ItYBKosovxTdFtPebrIuAQ==
-  /overlayscrollbars/1.10.3:
+  /overlayscrollbars/1.11.0:
     dev: false
     resolution:
-      integrity: sha512-iSxRC7DZ5XJwAZp5FKCz1vJaq+OleHjVAXAhC2Ea7ZXcYS4WbUKaHT+QYjHbEwBiJqm6bOEEfIbt3KR5MBentQ==
+      integrity: sha512-Wdzzfdta5/5Tc77FoibH14Cr34r7op0jh3eI9z1zvz9K4YiRIzNxvNIh3Rbezr8cs4Bn7NTNKzT8OHsJB58CxQ==
   /p-defer/1.0.0:
     dev: true
     engines:
@@ -8756,7 +8756,7 @@ specifiers:
   mini-css-extract-plugin: ^0.9.0
   nw: ^0.44.3
   optimize-css-assets-webpack-plugin: ^5.0.3
-  overlayscrollbars: ^1.10.3
+  overlayscrollbars: ^1.11.0
   overlayscrollbars-react: ^0.2.1
   pouchdb: ^7.2.1
   pouchdb-adapter-indexeddb: ^7.2.1
