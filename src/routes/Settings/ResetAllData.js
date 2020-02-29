@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { colors } from "../../lib/css";
+import { useStrings } from "../../lib/hooks";
 
 import Header from "../../components/sections/Header";
 import Main from "../../components/sections/Main";
@@ -21,6 +22,7 @@ import LabeledButtonGroup from "../../components/widgets/LabeledButtonGroup";
 function ResetAllData() {
   const { goBack } = useHistory();
   const [resetEnabled, setResetEnabled] = useState(false);
+  const strings = useStrings();
 
   useEffect(() => {
     const timeout = setTimeout(() => setResetEnabled(true), 2000);
@@ -29,21 +31,25 @@ function ResetAllData() {
 
   return (
     <>
-      <Header title="Reset All Data" icon={faExclamationTriangle} size="sm" />
+      <Header
+        title={strings.resetAllData}
+        icon={faExclamationTriangle}
+        size="sm"
+      />
       <Main>
         <LabeledButtonGroup
-          label="Are you sure you want to reset all data?"
-          hint="This will delete all your journaled thoughts and clear your settings."
+          label={strings.resetDataPrompt}
+          hint={strings.resetDataPromptHint}
           size="lg"
         >
           <CardButton
-            title="No, keep my data"
+            title={strings.cancelResetData}
             color={colors.primary}
             icon={faShieldAlt}
             onClick={goBack}
           />
           <CardButton
-            title="Yes, reset all data"
+            title={strings.confirmResetData}
             disabled={!resetEnabled}
             color={colors.danger}
             icon={faTrash}
@@ -52,9 +58,13 @@ function ResetAllData() {
       </Main>
       <ToolBar
         left={
-          <InlineButton text={"Back"} icon={faArrowLeft} onClick={goBack} />
+          <InlineButton
+            text={strings.back}
+            icon={faArrowLeft}
+            onClick={goBack}
+          />
         }
-        right={<InlineButton text="Help" icon={faQuestionCircle} />}
+        right={<InlineButton text={strings.help} icon={faQuestionCircle} />}
       />
     </>
   );

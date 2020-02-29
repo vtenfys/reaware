@@ -12,7 +12,7 @@ import {
 
 import { colors } from "../lib/css";
 import { useConfig } from "../lib/config";
-import { useCurrentTime } from "../lib/hooks";
+import { useCurrentTime, useStrings } from "../lib/hooks";
 
 import Header from "../components/sections/Header";
 import Main from "../components/sections/Main";
@@ -22,19 +22,19 @@ import InlineButton from "../components/widgets/InlineButton";
 
 const moods = {
   morning: {
-    greeting: "Good morning",
+    string: "morningGreeting",
     icon: faCloudSun,
   },
   afternoon: {
-    greeting: "Good afternoon",
+    string: "afternoonGreeting",
     icon: faSun,
   },
   evening: {
-    greeting: "Good evening",
+    string: "eveningGreeting",
     icon: faCloudMoon,
   },
   lateEvening: {
-    greeting: "Good evening",
+    string: "eveningGreeting",
     icon: faMoon,
   },
 };
@@ -43,6 +43,7 @@ function Home() {
   const [config] = useConfig();
   const { push } = useHistory();
   const { hour } = useCurrentTime();
+  const strings = useStrings();
 
   const mood = useMemo(() => {
     if (4 <= hour && hour < 12) {
@@ -64,35 +65,35 @@ function Home() {
     <>
       {config.firstRun && <Redirect to="FirstRun" />}
       <Header
-        title={`${mood.greeting}, ${config.name}.`}
-        subtitle="You have N cards to review today."
+        title={strings[mood.string](config.name)}
+        subtitle={strings.cardsToReview("N")}
         icon={mood.icon}
       />
       <Main>
         <CardButton
           onClick={() => push("Review")}
-          title="Review Today's Cards"
-          subtitle="Reviewing helps you mentally restructure journaled thoughts"
+          title={strings.reviewCards}
+          subtitle={strings.reviewCardsHint}
           color={colors.primary}
           size="lg"
         />
         <CardButton
           onClick={() => push("Journal")}
-          title="Journal New Thought"
-          subtitle="Journaling helps you respond rationally to distorted thoughts"
+          title={strings.journalThought}
+          subtitle={strings.journalThoughtHint}
           size="lg"
         />
       </Main>
       <ToolBar
-        left={<InlineButton text="Card Browser" icon={faSearch} />}
+        left={<InlineButton text={strings.cardBrowser} icon={faSearch} />}
         right={
           <>
             <InlineButton
-              text="Settings"
+              text={strings.settings}
               icon={faCog}
               onClick={() => push("Settings/")}
             />
-            <InlineButton text="Help" icon={faQuestionCircle} />
+            <InlineButton text={strings.help} icon={faQuestionCircle} />
           </>
         }
       />

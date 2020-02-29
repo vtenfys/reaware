@@ -9,6 +9,7 @@ import {
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useStrings } from "../../lib/hooks";
 import { useConfig } from "../../lib/config";
 import { colors } from "../../lib/css";
 
@@ -36,6 +37,7 @@ function reducer(state, action) {
 
 function Settings() {
   const { push, goBack } = useHistory();
+  const strings = useStrings();
 
   // Global configuration in local storage
   const [config, dispatchConfig] = useConfig();
@@ -51,10 +53,10 @@ function Settings() {
 
   return (
     <>
-      <Header title="Settings" icon={faCog} size="sm" />
+      <Header title={strings.settings} icon={faCog} size="sm" />
       <Main>
         <LabeledInput
-          label="What shall we call you?"
+          label={strings.whatsYourName}
           value={settings.name}
           onChange={event =>
             dispatchSettings({
@@ -65,7 +67,7 @@ function Settings() {
           autoComplete="off"
         />
         <CardButton
-          title="Reset All Data"
+          title={strings.resetAllData}
           disabled={settings.changed}
           color={colors.danger}
           icon={faExclamationTriangle}
@@ -76,20 +78,20 @@ function Settings() {
         left={
           <>
             <InlineButton
-              text={settings.changed ? "Save" : "Back"}
+              text={settings.changed ? strings.save : strings.back}
               icon={settings.changed ? faCheck : faArrowLeft}
               color={colors.primary}
               onClick={settings.changed ? applySettings : goBack}
             />
             <InlineButton
-              text="Revert"
+              text={strings.revert}
               icon={faUndo}
               disabled={!settings.changed}
               onClick={() => dispatchSettings({ type: "reset", config })}
             />
           </>
         }
-        right={<InlineButton text="Help" icon={faQuestionCircle} />}
+        right={<InlineButton text={strings.help} icon={faQuestionCircle} />}
       />
     </>
   );
