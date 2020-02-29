@@ -66,7 +66,7 @@ function Home() {
       {config.firstRun && <Redirect to="FirstRun" />}
       <Header
         title={strings[mood.string](config.name)}
-        subtitle={strings.cardsToReview("N")}
+        subtitle={strings.cardsToReview(0)}
         icon={mood.icon}
       />
       <Main>

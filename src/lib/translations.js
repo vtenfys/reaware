@@ -8,7 +8,7 @@ export const eveningGreeting = {
   en: name => `Good evening, ${name}.`,
 };
 export const cardsToReview = {
-  en: num => `You have ${num} cards to review today.`,
+  en: num => `You have ${num} ${num === 1 ? "card" : "cards"} to review today.`,
 };
 export const reviewCards = {
   en: "Review Today's Cards",
