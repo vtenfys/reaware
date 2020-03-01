@@ -56,7 +56,7 @@ function Home() {
       // 18:00 to 21:59
       return moods.evening;
     } else {
-      // 22:00 to 03:00
+      // 22:00 to 03:59
       return moods.lateEvening;
     }
   }, [hour, moods]);
