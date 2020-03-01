@@ -12,10 +12,11 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
   },
-  externals: [nodeExternals({ whitelist: [/\.css$/] }), { "nw.gui": "nw" }],
+  devtool: process.env.NODE_ENV === "development" && "eval-source-map",
   optimization: {
     minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin()],
   },
+  externals: [nodeExternals({ whitelist: [/\.css$/] }), { "nw.gui": "nw" }],
   plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
