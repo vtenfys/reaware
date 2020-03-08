@@ -15,10 +15,10 @@ Before starting development, make sure you've already installed [Node.js](https:
 Run the following command in a terminal:
 
 ```sh
-NWJS_BUILD_TYPE=sdk pnpm install
+pnpm run install:dev
 ```
 
-Remove `NWJS_BUILD_TYPE=sdk` to install the normal version of NW.js, which doesn't include Chrome DevTools.
+Run `pnpm install` to install the normal version of NW.js, which doesn't include Chrome DevTools.
 
 ### Building the app
 
