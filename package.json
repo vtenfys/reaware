@@ -14,6 +14,7 @@
   },
   "scripts": {
     "install:dev": "NWJS_BUILD_TYPE=sdk pnpm install",
+    "update:dev": "NWJS_BUILD_TYPE=sdk pnpm update",
     "start": "nw --mixed-context",
     "start:dev": "nw --mixed-context --devtools & react-devtools",
     "build": "NODE_ENV=production webpack",
@@ -59,7 +60,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "mini-css-extract-plugin": "^0.9.0",
-    "nw": "^0.44.3",
+    "nw": "^0.44.4",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.19.1",
     "react-devtools": "^4.5.0",

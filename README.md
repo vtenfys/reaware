@@ -20,6 +20,14 @@ pnpm run install:dev
 
 Run `pnpm install` to install the normal version of NW.js, which doesn't include Chrome DevTools.
 
+#### Update dependencies
+
+To update dependencies and keep the development version of NW.js, use:
+
+```sh
+pnpm run update:dev
+```
+
 ### Building the app
 
 **To build the app in development mode**, run the following command:
