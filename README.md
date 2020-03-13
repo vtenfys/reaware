@@ -12,7 +12,7 @@ Before starting development, make sure you've already installed [Node.js](https:
 
 ### Install dependencies
 
-Before developing ReAware, you'll need to install its dependencies. Run the following command to do so:
+Before developing ReAware, you will need to install its dependencies. Run the following command to do so:
 
 ```sh
 pnpm install
@@ -20,7 +20,9 @@ pnpm install
 
 ### Building the app
 
-Run the following command to build the app in development mode:
+#### Development mode
+
+To build the app in development mode, run the following command:
 
 ```sh
 pnpm run watch
@@ -28,7 +30,9 @@ pnpm run watch
 
 In development mode, the build process stays running and watches for changes, rebuilding when a change is detected.
 
-Or, to build in production mode:
+#### Production mode
+
+To build the app in production mode, run the following command:
 
 ```sh
 pnpm run build
@@ -38,13 +42,15 @@ In production mode, additional optimizations are enabled, and the build process 
 
 ### Running the app
 
-Run the following command:
+If building in **development mode**, you should first open a new terminal window to allow the build process to continue.
+
+Then, run the following command to start the app:
 
 ```sh
 pnpm start
 ```
 
-Chrome DevTools and React DevTools are enabled, and can be accessed using the keyboard shortcut F12.
+Chrome DevTools and React DevTools are available, and can be accessed using the keyboard shortcut F12.
 
 ## License
 
