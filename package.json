@@ -12,13 +12,14 @@
     "min_height": 480,
     "position": "center"
   },
+  "extensions": [
+    "fmkadmapgofadopljbjfkapdkoienihi"
+  ],
   "scripts": {
-    "install:dev": "NWJS_BUILD_TYPE=sdk pnpm install",
-    "update:dev": "NWJS_BUILD_TYPE=sdk pnpm update",
-    "start": "nw --mixed-context",
-    "start:dev": "nw --mixed-context --devtools & react-devtools",
-    "build": "NODE_ENV=production webpack",
-    "build:dev": "NODE_ENV=development webpack --watch"
+    "preinstall": "node scripts.js preinstall",
+    "env": "node scripts.js setenv",
+    "start": "node scripts.js start",
+    "build": "node scripts.js build"
   },
   "husky": {
     "hooks": {
@@ -51,6 +52,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "chrome-ext-downloader": "^1.0.4",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
@@ -63,7 +65,6 @@
     "nw": "^0.44.4",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.19.1",
-    "react-devtools": "^4.5.0",
     "terser-webpack-plugin": "^2.3.5",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
