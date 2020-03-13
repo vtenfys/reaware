@@ -10,21 +10,9 @@ ReAware is built with [NW.js](https://nwjs.io/), [webpack](https://webpack.js.or
 
 Before starting development, make sure you've already installed [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.js.org/en/installation).
 
-### Set the environment mode
-
-Run the following command in a terminal:
-
-```sh
-pnpm run env development
-```
-
-For production mode, replace `development` with `production` in the command above. Rerun this command whenever you want to switch mode.
-
-Development mode enables debugging with Chrome and React DevTools, while production mode configures Webpack to output production-optimized builds.
-
 ### Install dependencies
 
-Run the following command:
+Before developing ReAware, you'll need to install its dependencies. Run the following command to do so:
 
 ```sh
 pnpm install
@@ -32,13 +20,21 @@ pnpm install
 
 ### Building the app
 
-Run the following command:
+Run the following command to build the app in development mode:
+
+```sh
+pnpm run watch
+```
+
+In development mode, the build process stays running and watches for changes, rebuilding when a change is detected.
+
+Or, to build in production mode:
 
 ```sh
 pnpm run build
 ```
 
-In development mode, the build process stays running and watches for changes.
+In production mode, additional optimizations are enabled, and the build process does _not_ stay running.
 
 ### Running the app
 
@@ -48,7 +44,7 @@ Run the following command:
 pnpm start
 ```
 
-In development mode, Chrome DevTools and React DevTools are enabled, and can be accessed using the keyboard shortcut F12.
+Chrome DevTools and React DevTools are enabled, and can be accessed using the keyboard shortcut F12.
 
 ## License
 

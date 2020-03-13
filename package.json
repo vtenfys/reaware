@@ -16,10 +16,9 @@
     "fmkadmapgofadopljbjfkapdkoienihi"
   ],
   "scripts": {
-    "preinstall": "node scripts.js preinstall",
-    "env": "node scripts.js setenv",
-    "start": "node scripts.js start",
-    "build": "node scripts.js build"
+    "start": "node scripts/start.js",
+    "build": "NODE_ENV=production webpack",
+    "watch": "NODE_ENV=development webpack -w"
   },
   "husky": {
     "hooks": {
