@@ -20,7 +20,7 @@ pnpm run env development
 
 For production mode, replace `development` with `production` in the command above. Rerun this command whenever you want to switch mode.
 
-Development mode enables debugging with Chrome and React DevTools, while production mode configures Webpack to produce production-optimized builds.
+Development mode enables debugging with Chrome and React DevTools, while production mode configures Webpack to output production-optimized builds.
 
 ### Install dependencies
 
