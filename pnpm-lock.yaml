@@ -11,7 +11,7 @@ dependencies:
   prop-types: 15.7.2
   react: 16.13.0
   react-dom: 16.13.0_react@16.13.0
-  react-jss: 10.0.4_react@16.13.0
+  react-jss: 10.1.1_react@16.13.0
   react-router-dom: 5.1.2_react@16.13.0
 devDependencies:
   '@babel/core': 7.8.7
@@ -64,7 +64,7 @@ packages:
       convert-source-map: 1.7.0
       debug: 4.1.1
       gensync: 1.0.0-beta.1
-      json5: 2.1.1
+      json5: 2.1.2
       lodash: 4.17.15
       resolve: 1.15.1
       semver: 5.7.1
@@ -2213,14 +2213,14 @@ packages:
       node: '>4'
     resolution:
       integrity: sha512-BcxQSKTSEEQUftYpBVnsH4SF05NTuBokb19/sBt6asXGKZ/6VP7PLG1CBCkFDYOnhXhPh0jMhO6xZ71oYHXHBA==
-  /css-jss/10.0.4:
+  /css-jss/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
-      jss-preset-default: 10.0.4
+      jss: 10.1.1
+      jss-preset-default: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-kShZzhbtSWSYrEALc78WMlaK95rACwp0POFOIg+vnFmk0uBlNmYWIPOMc/2Or41p+26ODz367p0qwKHSR4cRzg==
+      integrity: sha512-HrSD06y4dCfZ6nHtG/SucJBG8tbt+lbyBsUbxfqujyycxPLLd/B9mRKW97B8Ua8VWK8LR4i9ur0P8szZEjoqzQ==
   /css-loader/3.4.2_webpack@4.42.0:
     dependencies:
       camelcase: 5.3.1
@@ -4349,7 +4349,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
-  /json5/2.1.1:
+  /json5/2.1.2:
     dependencies:
       minimist: 1.2.5
     dev: true
@@ -4357,7 +4357,7 @@ packages:
       node: '>=6'
     hasBin: true
     resolution:
-      integrity: sha512-l+3HXD0GEI3huGq1njuqtzYK8OYJyXMkOLtQ53pjWh89tvWS2h6l+1zMkYWqlb57+SiQodKZyvMEFb2X+KrFhQ==
+      integrity: sha512-MoUOQ4WdiN3yxhm7NEVJSJrieAo5hNSLQ5sj05OTRHPL9HOBy8u4Bu88jsC1jvqAdN+E1bJmsUcZH+1HQxliqQ==
   /jsprim/1.4.1:
     dependencies:
       assert-plus: 1.0.0
@@ -4369,117 +4369,117 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
-  /jss-plugin-camel-case/10.0.4:
+  /jss-plugin-camel-case/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
       hyphenate-style-name: 1.0.3
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-+wnqxJsyfUnOn0LxVg3GgZBSjfBCrjxwx7LFxwVTUih0ceGaXKZoieheNOaTo5EM4w8bt1nbb8XonpQCj67C6A==
-  /jss-plugin-compose/10.0.4:
+      integrity: sha512-MDIaw8FeD5uFz1seQBKz4pnvDLnj5vIKV5hXSVdMaAVq13xR6SVTVWkIV/keyTs5txxTvzGJ9hXoxgd1WTUlBw==
+  /jss-plugin-compose/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
       tiny-warning: 1.0.3
     dev: false
     resolution:
-      integrity: sha512-MXdbWAByjbzXzc3cHhTHF9RRGlU8ysQlB6HgXE2tW5dXkXw8/hwapaEzdYowZbFp/2jS4kq07jcn/7w3wutBJw==
-  /jss-plugin-default-unit/10.0.4:
+      integrity: sha512-0fD+YVGk0fVnsLiNf7CG4Lv7lYwmNyeE62Fbccx8k1mMdFoE7he0hpx37tudsfKW2ArCE+hf4fmJDXPW8l6LBw==
+  /jss-plugin-default-unit/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-T0mhL/Ogp/quvod/jAHEqKvptLDxq7Cj3a+7zRuqK8HxUYkftptN89wJElZC3rshhNKiogkEYhCWenpJdFvTBg==
-  /jss-plugin-expand/10.0.4:
+      integrity: sha512-UkeVCA/b3QEA4k0nIKS4uWXDCNmV73WLHdh2oDGZZc3GsQtlOCuiH3EkB/qI60v2MiCq356/SYWsDXt21yjwdg==
+  /jss-plugin-expand/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-n5PxEnL0L5Xc3gOjOJrfBJas7Uu1t0NA/PZBWCK3mVn0RQAjiQtIPCwSe7IaNw34jRtKxffDnhQ/5U1h71xRFg==
-  /jss-plugin-extend/10.0.4:
+      integrity: sha512-ITO3RR4eTB3628B+gx8gLI7TKKE0TsFDBJ7BA648ZhXjHWQ5uxdC1bZld+++xnFL1l4kerj5tuWmZxS64C1Kcg==
+  /jss-plugin-extend/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
       tiny-warning: 1.0.3
     dev: false
     resolution:
-      integrity: sha512-M3R9yPI+J0P62DCDFKPlj6Qg8TOXkIDwfHeQcRbbKQeu3HYblQPGJMzoxdwJqvoy36ydsLavwyFrwfx44e1oSg==
-  /jss-plugin-global/10.0.4:
+      integrity: sha512-dZl0hNsndP9GJM6yqA7lZmnx6KJHo/13Zeo5B3i2uaDNO9jd5Y3pp1XHURGfbFG3K29XsYBQPTgfBwQ7e7+nyA==
+  /jss-plugin-global/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-N8n9/GHENZce+sqE4UYiZiJtI+t+erT/BypHOrNYAfIoNEj7OYsOEKfIo2P0GpLB3QyDAYf5eo9XNdZ8veEkUA==
-  /jss-plugin-nested/10.0.4:
+      integrity: sha512-VBG3wRyi3Z8S4kMhm8rZV6caYBegsk+QnQZSVmrWw6GVOT/Z4FA7eyMu5SdkorDlG/HVpHh91oFN56O4R9m2VA==
+  /jss-plugin-nested/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
       tiny-warning: 1.0.3
     dev: false
     resolution:
-      integrity: sha512-QM21BKVt8LDeoRfowvAMh/s+/89VYrreIIE6ch4pvw0oAXDWw1iorUPlqLZ7uCO3UL0uFtQhJq3QMLN6Lr1v0A==
-  /jss-plugin-props-sort/10.0.4:
+      integrity: sha512-ozEu7ZBSVrMYxSDplPX3H82XHNQk2DQEJ9TEyo7OVTPJ1hEieqjDFiOQOxXEj9z3PMqkylnUbvWIZRDKCFYw5Q==
+  /jss-plugin-props-sort/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-WoETdOCjGskuin/OMt2uEdDPLZF3vfQuHXF+XUHGJrq0BAapoyGQDcv37SeReDlkRAbVXkEZPsIMvYrgHSHFiA==
-  /jss-plugin-rule-value-function/10.0.4:
+      integrity: sha512-g/joK3eTDZB4pkqpZB38257yD4LXB0X15jxtZAGbUzcKAVUHPl9Jb47Y7lYmiGsShiV4YmQRqG1p2DHMYoK91g==
+  /jss-plugin-rule-value-function/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-0hrzOSWRF5ABJGaHrlnHbYZjU877Ofzfh2id3uLtBvemGQLHI+ldoL8/+6iPSRa7M8z8Ngfg2vfYhKjUA5gA0g==
-  /jss-plugin-rule-value-observable/10.0.4:
+      integrity: sha512-ClV1lvJ3laU9la1CUzaDugEcwnpjPTuJ0yGy2YtcU+gG/w9HMInD5vEv7xKAz53Bk4WiJm5uLOElSEshHyhKNw==
+  /jss-plugin-rule-value-observable/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
       symbol-observable: 1.2.0
     dev: false
     resolution:
-      integrity: sha512-1XB8kUzL7yv8jgRrS2WjeVHYk0fCI5oIz3GizWGJaA9gK3wTVGR7YgDJ2CbCcwy1TxsOp1qYVKeRsom8sQGo5w==
-  /jss-plugin-template/10.0.4:
+      integrity: sha512-l1zmLfS5Ks6CrthOIVTokHkDoI01ymnwNBlciN+IlaR4UsLEQBBL0+3BfQjOPvIYRAYXxYx3G7ebUHebr8mWyA==
+  /jss-plugin-template/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
+      jss: 10.1.1
       tiny-warning: 1.0.3
     dev: false
     resolution:
-      integrity: sha512-ZVJgxZo4DT8omdK3liHrkUYVuip98evt+f7dHl7Tg1Ye3j4RmFQYO2LWjw8fHjo3aObFxY5muv8W901w/0BdbA==
-  /jss-plugin-vendor-prefixer/10.0.4:
+      integrity: sha512-CPhNapLDgj6gIJOi3vj/QPohF/1OHuLQj8ZjBYqrnzCDSfYV5s2Rzp1TicFGxUb07BRLh62ymU+MgH1hbKGSTQ==
+  /jss-plugin-vendor-prefixer/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
       css-vendor: 2.0.7
-      jss: 10.0.4
+      jss: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-4JgEbcrdeMda1qvxTm1CnxFJAWVV++VLpP46HNTrfH7VhVlvUpihnUNs2gAlKuRT/XSBuiWeLAkrTqF4NVrPig==
-  /jss-preset-default/10.0.4:
+      integrity: sha512-09MZpQ6onQrhaVSF6GHC4iYifQ7+4YC/tAP6D4ZWeZotvCMq1mHLqNKRIaqQ2lkgANjlEot2JnVi1ktu4+L4pw==
+  /jss-preset-default/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
-      jss: 10.0.4
-      jss-plugin-camel-case: 10.0.4
-      jss-plugin-compose: 10.0.4
-      jss-plugin-default-unit: 10.0.4
-      jss-plugin-expand: 10.0.4
-      jss-plugin-extend: 10.0.4
-      jss-plugin-global: 10.0.4
-      jss-plugin-nested: 10.0.4
-      jss-plugin-props-sort: 10.0.4
-      jss-plugin-rule-value-function: 10.0.4
-      jss-plugin-rule-value-observable: 10.0.4
-      jss-plugin-template: 10.0.4
-      jss-plugin-vendor-prefixer: 10.0.4
+      jss: 10.1.1
+      jss-plugin-camel-case: 10.1.1
+      jss-plugin-compose: 10.1.1
+      jss-plugin-default-unit: 10.1.1
+      jss-plugin-expand: 10.1.1
+      jss-plugin-extend: 10.1.1
+      jss-plugin-global: 10.1.1
+      jss-plugin-nested: 10.1.1
+      jss-plugin-props-sort: 10.1.1
+      jss-plugin-rule-value-function: 10.1.1
+      jss-plugin-rule-value-observable: 10.1.1
+      jss-plugin-template: 10.1.1
+      jss-plugin-vendor-prefixer: 10.1.1
     dev: false
     resolution:
-      integrity: sha512-XstC0o0JU5tgn25GUCT/QdF7QcWuYGyJ36D3+PtZvUQn2wnRhg7auvj11n2aj17xY7OLaY679V+C2CJCd72R0A==
-  /jss/10.0.4:
+      integrity: sha512-YwQp/BZ8IiBwxDTQ4uPAjzI2k2njrw6RJegAPvhCB1MTmWN2oR9Dhb5aN3RtepUf/agUkewTMwQqoS6PijgVMg==
+  /jss/10.1.1:
     dependencies:
       '@babel/runtime': 7.8.7
       csstype: 2.6.9
@@ -4487,7 +4487,7 @@ packages:
       tiny-warning: 1.0.3
     dev: false
     resolution:
-      integrity: sha512-GqHmeDK83qbqMAVjxyPfN1qJVTKZne533a9bdCrllZukUM8npG/k+JumEPI86IIB5ifaZAHG2HAsUziyxOiooQ==
+      integrity: sha512-Xz3qgRUFlxbWk1czCZibUJqhVPObrZHxY3FPsjCXhDld4NOj1BgM14Ir5hVm+Qr6OLqVljjGvoMcCdXNOAbdkQ==
   /jsx-ast-utils/2.2.3:
     dependencies:
       array-includes: 3.1.1
@@ -6403,15 +6403,15 @@ packages:
   /react-is/16.13.0:
     resolution:
       integrity: sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
-  /react-jss/10.0.4_react@16.13.0:
+  /react-jss/10.1.1_react@16.13.0:
     dependencies:
       '@babel/runtime': 7.8.7
       '@emotion/is-prop-valid': 0.7.3
-      css-jss: 10.0.4
+      css-jss: 10.1.1
       hoist-non-react-statics: 3.3.2
       is-in-browser: 1.1.3
-      jss: 10.0.4
-      jss-preset-default: 10.0.4
+      jss: 10.1.1
+      jss-preset-default: 10.1.1
       prop-types: 15.7.2
       react: 16.13.0
       shallow-equal: 1.2.1
@@ -6421,7 +6421,7 @@ packages:
     peerDependencies:
       react: '>=15'
     resolution:
-      integrity: sha512-Kjida0ILKwuQUVzTo4fvohZFyFFMX8KCYkkYVELVFJfMCTz0KwfUyJVmzltvOxE/YyuF0YoHMz7sV8Ywx+Ws1Q==
+      integrity: sha512-GCSKkyj6/bDNNgK1KtaU1FbTAKJ7CQE83p34qKpCc4tVPRi1wCfopyKot1cW/YYJizqltc2MaKzGqFK5eZhBSQ==
   /react-router-dom/5.1.2_react@16.13.0:
     dependencies:
       '@babel/runtime': 7.8.7
@@ -7984,13 +7984,13 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-omakb0d7FjMo3R1D2EbTKVIk6dAVLRxFXdLZMEUToeAvuqgG/YuHMuQOZ5fgk+vQ8cx+cnGKwyg+8g8PNT0xQg==
-  /yargs-parser/13.1.1:
+  /yargs-parser/13.1.2:
     dependencies:
       camelcase: 5.3.1
       decamelize: 1.2.0
     dev: true
     resolution:
-      integrity: sha512-oVAVsHz6uFrg3XQheFII8ESO2ssAf9luWuAd6Wexsu4F3OtIW0o8IribPXYrD4WC24LWtPrJlGy87y5udK+dxQ==
+      integrity: sha512-3lbsNRf/j+A4QuSZfDRA7HRSfWrzO0YjqTJd5kjAq37Zep1CEgaYmrH9Q3GwPiB9cHyd1Y1UwggGhJGoxipbzg==
   /yargs/13.2.4:
     dependencies:
       cliui: 5.0.0
@@ -8003,7 +8003,7 @@ packages:
       string-width: 3.1.0
       which-module: 2.0.0
       y18n: 4.0.0
-      yargs-parser: 13.1.1
+      yargs-parser: 13.1.2
     dev: true
     resolution:
       integrity: sha512-HG/DWAJa1PAnHT9JAhNa8AbAv3FPaiLzioSjCcmuXXhP8MlpHO5vwls4g4j6n30Z74GVQj8Xa62dWVx1QCGklg==
@@ -8057,7 +8057,7 @@ specifiers:
   prop-types: ^15.7.2
   react: ^16.13.0
   react-dom: ^16.13.0
-  react-jss: ^10.0.4
+  react-jss: ^10.1.1
   react-router-dom: ^5.1.2
   terser-webpack-plugin: ^2.3.5
   webpack: ^4.42.0
